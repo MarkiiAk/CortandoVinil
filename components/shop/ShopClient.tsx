@@ -16,6 +16,7 @@ const categories: { label: string; value: FilterValue }[] = [
   { label: "Ropa", value: "ropa" },
   { label: "Llaveros", value: "llaveros" },
   { label: "Fiestas", value: "fiestas" },
+  { label: "Velas", value: "velas" },
   { label: "Packaging", value: "packaging" },
 ];
 

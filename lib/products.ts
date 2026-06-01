@@ -3,7 +3,8 @@ export type ProductCategory =
   | "ropa"
   | "llaveros"
   | "fiestas"
-  | "packaging";
+  | "packaging"
+  | "velas";
 
 export interface CustomizationField {
   id: string;
@@ -199,6 +200,78 @@ export const products: Product[] = [
         type: "select",
         required: true,
         options: ["Negro", "Blanco", "Dorado", "Cobre"],
+      },
+    ],
+    images: [],
+    available: true,
+  },
+  {
+    id: "7",
+    slug: "vela-personalizada",
+    name: "Vela Personalizada",
+    shortDescription: "Con etiqueta y aroma a tu elección",
+    description:
+      "Vela artesanal con etiqueta personalizada. Elige el aroma, el color de la cera y el texto de la etiqueta. Perfecta para regalar o decorar.",
+    basePrice: 130,
+    category: "velas",
+    customizationFields: [
+      {
+        id: "texto-etiqueta",
+        label: "Texto para la etiqueta",
+        type: "text",
+        required: true,
+        maxLength: 30,
+        placeholder: "Ej: Con amor, Mamá o un nombre",
+      },
+      {
+        id: "aroma",
+        label: "Aroma",
+        type: "select",
+        required: true,
+        options: ["Vainilla", "Lavanda", "Coco", "Rosa", "Sin aroma"],
+      },
+      {
+        id: "color-cera",
+        label: "Color de la cera",
+        type: "select",
+        required: true,
+        options: ["Blanco", "Negro", "Crema", "Rosa palo", "Terracota"],
+      },
+    ],
+    images: [],
+    available: true,
+  },
+  {
+    id: "8",
+    slug: "set-velas",
+    name: "Set de Velas (x3)",
+    shortDescription: "Tres velas coordinadas, ideales para regalo",
+    description:
+      "Set de 3 velas artesanales en diferentes tamaños con etiquetas personalizadas y coordinadas. Presentación en caja kraft.",
+    basePrice: 320,
+    category: "velas",
+    customizationFields: [
+      {
+        id: "texto-etiqueta",
+        label: "Texto para las etiquetas",
+        type: "text",
+        required: true,
+        maxLength: 30,
+        placeholder: "Ej: nombre, fecha o frase corta",
+      },
+      {
+        id: "aroma",
+        label: "Aroma",
+        type: "select",
+        required: true,
+        options: ["Vainilla", "Lavanda", "Coco", "Rosa", "Sin aroma"],
+      },
+      {
+        id: "color-cera",
+        label: "Color de la cera",
+        type: "select",
+        required: true,
+        options: ["Blanco", "Negro", "Crema", "Rosa palo", "Terracota"],
       },
     ],
     images: [],
