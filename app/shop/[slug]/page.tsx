@@ -30,9 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Casa Alessia",
       images: [
         {
-          url: `/shop/${product.slug}/opengraph-image`,
-          width: 1200,
-          height: 630,
+          url: "/logo.png",
           alt: `${product.name} Personalizado | Casa Alessia`,
         },
       ],
@@ -41,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: `${product.name} Personalizado | Casa Alessia`,
       description: product.seoDescription,
-      images: [`/shop/${product.slug}/opengraph-image`],
+      images: ["/logo.png"],
     },
     alternates: {
       canonical: `https://mimarca.mx/shop/${product.slug}`,

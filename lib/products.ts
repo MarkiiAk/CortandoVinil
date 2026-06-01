@@ -423,6 +423,114 @@ export const products: Product[] = [
     images: ["/products/mampara-personalizada.jpg"],
     available: true,
   },
+  {
+    id: "12",
+    slug: "letrero-acrilico",
+    name: "Letrero de Acrílico",
+    shortDescription: "El que se roba todas las fotos del evento.",
+
+    description:
+      "Lámina de acrílico con texto en vinilo de corte. Perfecto para bodas, XV años, baby showers y cualquier evento que merezca un letrero bonito. Se ve en todas las fotos.",
+    seoDescription:
+      "Letrero de acrílico personalizado con vinilo de corte para bodas, XV años, baby shower y eventos. El backdrop perfecto para fotos. Hecho a mano con Cricut, enviamos a toda la república mexicana.",
+    basePrice: 320,
+    category: "eventos",
+    customizationFields: [
+      {
+        id: "texto",
+        label: "Texto del letrero",
+        type: "text",
+        required: true,
+        maxLength: 50,
+        placeholder: "Ej: Bienvenidos, Mr & Mrs García, Baby Sofia",
+      },
+      {
+        id: "color-vinilo",
+        label: "Color del vinilo",
+        type: "select",
+        required: true,
+        options: ["Blanco", "Negro", "Dorado", "Cobre", "Rosa palo", "Crema"],
+      },
+      {
+        id: "tamaño",
+        label: "Tamaño",
+        type: "select",
+        required: true,
+        options: ["Chico (20×30 cm)", "Mediano (30×40 cm)", "Grande (40×60 cm)"],
+      },
+    ],
+    images: ["/products/letrero-acrilico.jpg"],
+    available: true,
+  },
+  {
+    id: "13",
+    slug: "termo-personalizado",
+    name: "Termo Personalizado",
+    shortDescription: "Tu nombre en el termo que ya quieres de todas formas.",
+    description:
+      "Termo tipo Stanley o similar con vinilo de corte personalizado. El que se te va a quedar viendo en la oficina, en el gym y en el café.",
+    seoDescription:
+      "Termo personalizado con vinilo de corte y tu nombre o frase favorita. Estilo Stanley. El regalo personalizado perfecto para quien lo tiene todo. Enviamos a toda la república mexicana.",
+    basePrice: 320,
+    category: "vasos",
+    customizationFields: [
+      {
+        id: "texto",
+        label: "¿Qué quieres que diga?",
+        type: "text",
+        required: true,
+        maxLength: 30,
+        placeholder: "Ej: tu nombre, una frase, una inicial",
+      },
+      {
+        id: "color-vinilo",
+        label: "Color del vinilo",
+        type: "select",
+        required: true,
+        options: ["Negro", "Blanco", "Dorado", "Rosa palo", "Azul marino", "Cobre"],
+      },
+    ],
+    images: ["/products/termo-personalizado.jpg"],
+    available: true,
+  },
+  {
+    id: "14",
+    slug: "bolsa-tote",
+    name: "Bolsa Tote Personalizada",
+    shortDescription: "La bolsa que dices que eres.",
+    description:
+      "Tote bag de algodón con tu frase, nombre o diseño en HTV. Para el súper, para la playa, para cargar tu vida. Fotografiable desde cualquier ángulo.",
+    seoDescription:
+      "Bolsa tote personalizada de algodón con tu frase o nombre en HTV. Regalo personalizado aesthetic y funcional. Para el súper, la playa o el gym. Hecha a mano, enviamos a todo México.",
+    basePrice: 220,
+    category: "ropa",
+    customizationFields: [
+      {
+        id: "texto",
+        label: "¿Qué quieres que diga?",
+        type: "text",
+        required: true,
+        maxLength: 40,
+        placeholder: "Ej: 'Café antes que tú', tu nombre, una frase",
+      },
+      {
+        id: "color-htv",
+        label: "Color del texto",
+        type: "select",
+        required: true,
+        options: ["Negro", "Blanco", "Dorado", "Terracota", "Verde olivo"],
+      },
+      {
+        id: "color-bolsa",
+        label: "Color de la bolsa",
+        type: "select",
+        required: true,
+        options: ["Natural (crema)", "Negro", "Azul marino"],
+      },
+    ],
+    images: ["/products/bolsa-tote.jpg"],
+    available: true,
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {
