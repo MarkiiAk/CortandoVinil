@@ -7,23 +7,23 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const steps = [
   {
     number: "1",
-    title: "Elige tu producto",
-    description: "Explora el catálogo y encuentra lo que buscas.",
+    title: "Escoge tu favorito",
+    description: "Date una vuelta por el catálogo y quédate con el que más te lata.",
   },
   {
     number: "2",
-    title: "Personaliza",
-    description: "Escribe tu nombre, frase o elige el diseño.",
+    title: "Ponle tu toque",
+    description: "Dinos qué nombre, frase o diseño quieres. Aquí es donde se vuelve tuyo.",
   },
   {
     number: "3",
     title: "Paga seguro",
-    description: "Checkout con MercadoPago, rápido y protegido.",
+    description: "Checkout con MercadoPago, rápido y sin enredos.",
   },
   {
     number: "4",
-    title: "Lo recibes en casa",
-    description: "Empacado con cuidado y enviado a todo México.",
+    title: "Recíbelo en casa",
+    description: "Lo empacamos con cariño y te lo mandamos a donde estés en México.",
   },
 ];
 
@@ -45,7 +45,7 @@ export function HowItWorks() {
             Proceso
           </span>
           <h2 className="font-cormorant text-4xl md:text-5xl text-carbon">
-            Así de fácil
+            Pedirlo es facilísimo
           </h2>
         </motion.div>
 

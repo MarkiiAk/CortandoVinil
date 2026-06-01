@@ -34,7 +34,7 @@ export const products: Product[] = [
     id: "1",
     slug: "vaso-personalizado",
     name: "Vaso Personalizado",
-    shortDescription: "Con tu nombre o frase en vinilo",
+    shortDescription: "El que nadie en la oficina te va a robar.",
     description:
       "Vaso de acero inoxidable con tu nombre, frase o diseño en vinilo de alta calidad. Apto para bebidas frías y calientes.",
     basePrice: 150,
@@ -63,7 +63,7 @@ export const products: Product[] = [
     id: "2",
     slug: "playera-personalizada",
     name: "Playera con Texto",
-    shortDescription: "HTV Iron-On durable y lavable",
+    shortDescription: "Tu frase, donde todos la vean. Aguanta lavada tras lavada.",
     description:
       "Playera básica de algodón con tu texto, frase o nombre aplicado con HTV Iron-On de alta durabilidad. Resistente al lavado.",
     basePrice: 200,
@@ -99,7 +99,7 @@ export const products: Product[] = [
     id: "3",
     slug: "llavero-personalizado",
     name: "Llavero Personalizado",
-    shortDescription: "Acrílico cortado con nombre o forma",
+    shortDescription: "Un detalle chiquito que dice mucho.",
     description:
       "Llavero de acrílico cortado con Cricut con tu nombre, iniciales o forma especial. Acabado pulido y elegante.",
     basePrice: 80,
@@ -128,7 +128,7 @@ export const products: Product[] = [
     id: "4",
     slug: "etiquetas-fiesta",
     name: "Set Etiquetas para Fiesta",
-    shortDescription: "12 piezas, papel sticker premium",
+    shortDescription: "Para que tu evento se vea cuidado hasta el último detalle.",
     description:
       "Set de 12 etiquetas personalizadas para tu evento especial. Papel sticker premium, diseño coordinado con nombre y fecha.",
     basePrice: 120,
@@ -158,7 +158,7 @@ export const products: Product[] = [
     id: "5",
     slug: "cajita-regalo",
     name: "Cajita de Regalo",
-    shortDescription: "Cartulina troquelada con dedicatoria",
+    shortDescription: "Cuando el envoltorio importa tanto como lo que va adentro.",
     description:
       "Cajita armada de cartulina troquelada con tu dedicatoria personalizada. Perfecta para sorprender a quien más quieres.",
     basePrice: 90,
@@ -180,7 +180,7 @@ export const products: Product[] = [
     id: "6",
     slug: "portavasos-set",
     name: "Portavasos (Set x4)",
-    shortDescription: "Acrílico con vinilo, set de 4",
+    shortDescription: "Le dan ese toque a cualquier mesa o reunión.",
     description:
       "Set de 4 portavasos de acrílico con diseño en vinilo. Minimalistas y elegantes, perfectos para el hogar o como regalo.",
     basePrice: 180,
@@ -209,7 +209,7 @@ export const products: Product[] = [
     id: "7",
     slug: "vela-personalizada",
     name: "Vela Personalizada",
-    shortDescription: "Con etiqueta y aroma a tu elección",
+    shortDescription: "El regalo que se siente pensado.",
     description:
       "Vela artesanal con etiqueta personalizada. Elige el aroma, el color de la cera y el texto de la etiqueta. Perfecta para regalar o decorar.",
     basePrice: 130,
@@ -245,7 +245,7 @@ export const products: Product[] = [
     id: "8",
     slug: "set-velas",
     name: "Set de Velas (x3)",
-    shortDescription: "Tres velas coordinadas, ideales para regalo",
+    shortDescription: "Listas para regalar sin pensarlo dos veces.",
     description:
       "Set de 3 velas artesanales en diferentes tamaños con etiquetas personalizadas y coordinadas. Presentación en caja kraft.",
     basePrice: 320,

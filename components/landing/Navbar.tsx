@@ -61,7 +61,7 @@ export function Navbar() {
               href="/shop"
               className="font-dm text-sm border border-cafe text-cafe px-5 py-2.5 hover:bg-cafe hover:text-crema transition-all duration-200"
             >
-              Ver tienda
+              Quiero el mío
             </Link>
           </div>
 
@@ -101,7 +101,7 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className="font-dm text-sm border border-cafe text-cafe px-5 py-3 text-center hover:bg-cafe hover:text-crema transition-all duration-200"
             >
-              Ver tienda
+              Quiero el mío
             </Link>
           </motion.div>
         )}

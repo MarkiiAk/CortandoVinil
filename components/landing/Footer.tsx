@@ -30,8 +30,8 @@ export function Footer() {
               MiMarca
             </span>
             <p className="font-dm text-sm leading-relaxed max-w-xs">
-              Productos personalizados hechos con amor y precisión.
-              Enviamos a todo México.
+              Cosas bonitas hechas a mano, con tu nombre y a tu manera.
+              Te llegan a cualquier parte de México.
             </p>
             <div className="flex items-center gap-4 pt-1">
               <a

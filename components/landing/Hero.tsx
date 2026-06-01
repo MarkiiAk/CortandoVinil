@@ -42,19 +42,17 @@ export function Hero() {
             variants={item}
             className="font-cormorant italic text-[clamp(3rem,7vw,5rem)] text-carbon leading-[1.05]"
           >
-            Tu nombre,
+            Hecho para ti,
             <br />
-            tu estilo,
-            <br />
-            <span className="text-cafe">tu historia.</span>
+            <span className="text-cafe">con tu nombre.</span>
           </motion.h1>
 
           <motion.p
             variants={item}
             className="font-dm text-base text-humo leading-relaxed max-w-md"
           >
-            Vasos, playeras, llaveros y más con tu nombre,
-            tu frase, tu momento. Hecho para ti, enviado a tu puerta.
+            Vasos, playeras, llaveros y mil cosas más, con tu nombre o tu frase
+            favorita. Tú lo imaginas, nosotros lo hacemos y te llega hasta la puerta.
           </motion.p>
 
           <motion.div
@@ -65,13 +63,13 @@ export function Hero() {
               href="/shop"
               className="font-dm text-sm bg-cafe text-crema px-7 py-3.5 hover:bg-cafe-dark transition-all duration-200"
             >
-              Ver productos
+              Ver lo que hacemos
             </Link>
             <a
               href="#como-funciona"
               className="font-dm text-sm text-cafe border-b border-cafe/30 hover:border-cafe transition-all duration-200 pb-0.5"
             >
-              Cómo funciona →
+              ¿Cómo funciona? →
             </a>
           </motion.div>
         </motion.div>
@@ -98,7 +96,7 @@ export function Hero() {
                   {product.name}
                 </span>
                 <span className="font-dm text-xs text-humo mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Personalizar →
+                  Hazlo tuyo →
                 </span>
               </Link>
             </motion.div>

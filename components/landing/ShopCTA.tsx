@@ -20,11 +20,11 @@ export function ShopCTA() {
             Tienda
           </span>
           <h2 className="font-cormorant text-4xl md:text-5xl text-carbon">
-            ¿Listo para personalizar?
+            ¿Le entramos?
           </h2>
           <p className="font-dm text-base text-humo leading-relaxed">
-            Explora el catálogo completo con todas las opciones, filtros por
-            categoría y más formas de hacer algo único.
+            Aquí está todo el catálogo, con filtros por categoría para que
+            encuentres rápido lo tuyo y le des una vuelta a todas las opciones.
           </p>
           <Link
             href="/shop"
