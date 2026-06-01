@@ -10,43 +10,36 @@ const WHATSAPP_NUMBER = "521XXXXXXXXXX";
 const servicios = [
   {
     id: "invitacion-digital",
-    eyebrow: "Más pedida",
     name: "Invitación Digital",
     description:
-      "Un link. Lo abren en el celular y ya están dentro de tu evento. Animada, interactiva, con tus colores y tu nombre. Sin imagen borrosa de WhatsApp.",
-    note: "Tenemos una muestra en vivo que puedes abrir ahorita.",
-    demoUrl:
-      "https://alessia-adventures.vercel.app/invites/turns3/turns3.html",
+      "Link animado que se abre en el celular con el diseño de tu evento. Sin imagen borrosa de WhatsApp, sin imprimir nada.",
+    note: "Tenemos muestra — pídela por WhatsApp.",
     price: "desde $450",
     featured: true,
     waMessage:
-      "Hola 👋 me interesa una invitación digital para mi evento. ¿Me cuentan más?",
+      "Hola 👋 me interesa una invitación digital para mi evento. ¿Me pueden compartir una muestra?",
   },
   {
     id: "mampara",
-    eyebrow: "El backdrop perfecto",
-    name: "Mampara Personalizada",
+    name: "Backdrop / Mampara",
     description:
-      "Vinilo de corte con el texto de tu evento sobre mampara de madera o foam. Se roba todas las fotos.",
-    note: "La mampara se cotiza aparte — trae la tuya o consultamos opciones.",
-    demoUrl: null,
+      "El panel que se roba todas las fotos. Texto de tu evento en vinilo de corte, en el estilo y colores que ya elegiste.",
+    note: "La mampara se cotiza aparte — trae la tuya o consultamos.",
     price: "vinilo desde $350",
     featured: false,
     waMessage:
-      "Hola 👋 me interesa una mampara personalizada para mi evento. ¿Me pueden cotizar?",
+      "Hola 👋 me interesa un backdrop o mampara personalizada para mi evento. ¿Me dan más info?",
   },
   {
     id: "invitacion-fisica",
-    eyebrow: "El detalle que se toca",
     name: "Invitación Física",
     description:
-      "Para quienes todavía merecen algo en las manos. Papel premium, diseño coordinado al evento, sobre incluido.",
-    note: "Mínimo 20 piezas. Se puede combinar con la digital.",
-    demoUrl: null,
+      "Papel premium con el mismo diseño de todo lo demás. Para quienes todavía merecen algo en las manos.",
+    note: "Mínimo 20 piezas. Se coordina con la digital.",
     price: "desde $25 c/u",
     featured: false,
     waMessage:
-      "Hola 👋 me interesan invitaciones físicas. ¿Cuál es el proceso?",
+      "Hola 👋 me interesan invitaciones físicas para mi evento. ¿Cuál es el proceso?",
   },
 ];
 
@@ -64,18 +57,30 @@ export function EventosSection() {
           <span className="font-dm text-xs tracking-[0.2em] uppercase text-humo block mb-3">
             Para tu evento
           </span>
-          <div className="flex items-end justify-between gap-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <h2 className="font-cormorant text-4xl md:text-5xl text-carbon leading-[1.1]">
-              ¿Tienes un evento?
+              Todo coordinado
               <br />
-              También lo armamos.
+              para tu evento.
             </h2>
-            <p className="hidden md:block font-dm text-sm text-humo max-w-xs text-right leading-relaxed flex-shrink-0">
-              Junta lo que ya viste — vasos, etiquetas, cajitas — y súmale
-              invitación y decoración. Todo en un solo pedido.
+            <p className="font-dm text-sm text-humo max-w-sm leading-relaxed md:text-right">
+              Elegimos un diseño y lo llevamos a todo lo que ya hacemos:
+              vasos, llaveros, cajitas, etiquetas. Y le sumamos lo que solo
+              existe para tu día.
             </p>
           </div>
         </motion.div>
+
+        {/* Antetítulo de las cards */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="font-dm text-xs tracking-[0.2em] uppercase text-humo mb-5"
+        >
+          Solo para eventos
+        </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {servicios.map((s, i) => (
@@ -91,13 +96,6 @@ export function EventosSection() {
               `}
             >
               <div className="space-y-4">
-                <span
-                  className={`font-dm text-xs tracking-[0.18em] uppercase block ${
-                    s.featured ? "text-crema/50" : "text-humo"
-                  }`}
-                >
-                  {s.eyebrow}
-                </span>
                 <h3
                   className={`font-cormorant text-3xl leading-tight ${
                     s.featured ? "text-crema italic" : "text-carbon"
@@ -129,29 +127,37 @@ export function EventosSection() {
                 >
                   {s.price}
                 </p>
-
-                <div className="flex flex-col gap-2">
-                    <a
-                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(s.waMessage)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`
-                      inline-flex items-center gap-2.5 font-dm text-sm px-5 py-3 transition-all duration-200 w-full justify-center
-                      ${
-                        s.featured
-                          ? "bg-crema text-cafe hover:bg-arena"
-                          : "bg-cafe text-crema hover:bg-cafe-dark"
-                      }
-                    `}
-                  >
-                    <MessageCircle size={14} />
-                    Cotizar por WhatsApp
-                  </a>
-                </div>
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(s.waMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`
+                    inline-flex items-center gap-2.5 font-dm text-sm px-5 py-3 transition-all duration-200 w-full justify-center
+                    ${
+                      s.featured
+                        ? "bg-crema text-cafe hover:bg-arena"
+                        : "bg-cafe text-crema hover:bg-cafe-dark"
+                    }
+                  `}
+                >
+                  <MessageCircle size={14} />
+                  Cotizar por WhatsApp
+                </a>
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Línea de cierre */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="font-dm text-sm text-humo text-center mt-10"
+        >
+          Y lo demás de tu fiesta — vasos, etiquetas, cajitas, velas — lo coordinamos con el mismo diseño.
+        </motion.p>
       </div>
     </section>
   );
