@@ -175,7 +175,7 @@ export const products: Product[] = [
         placeholder: "Ej: Para mi mamá con todo mi amor",
       },
     ],
-    images: [],
+    images: ["/products/cajita-regalo.jpg"],
     available: true,
   },
   {
@@ -204,7 +204,7 @@ export const products: Product[] = [
         options: ["Negro", "Blanco", "Dorado", "Cobre"],
       },
     ],
-    images: [],
+    images: ["/products/portavasos-set.jpg"],
     available: true,
   },
   {
@@ -240,7 +240,7 @@ export const products: Product[] = [
         options: ["Blanco", "Negro", "Crema", "Rosa palo", "Terracota"],
       },
     ],
-    images: [],
+    images: ["/products/vela-personalizada.jpg"],
     available: true,
   },
   {
@@ -276,7 +276,7 @@ export const products: Product[] = [
         options: ["Blanco", "Negro", "Crema", "Rosa palo", "Terracota"],
       },
     ],
-    images: [],
+    images: ["/products/set-velas.jpg"],
     available: true,
   },
   {
