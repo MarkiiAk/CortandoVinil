@@ -16,11 +16,20 @@ export const metadata: Metadata = {
     locale: "es_MX",
     url: "https://mimarca.mx/shop",
     siteName: "Casa Alessia",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Tienda de Productos Personalizados | Casa Alessia",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Tienda | Casa Alessia",
     description: "Catálogo de productos personalizados. Enviamos a todo México.",
+    images: ["/opengraph-image"],
   },
   alternates: {
     canonical: "https://mimarca.mx/shop",
