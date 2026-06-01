@@ -26,7 +26,7 @@ export function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((i) => (i + 1) % words.length);
-    }, 2500);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
