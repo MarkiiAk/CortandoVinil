@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getProductBySlug, products } from "@/lib/products";
+import { ProductDetail } from "@/components/shop/ProductDetail";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -80,19 +81,12 @@ export default async function ProductPage({ params }: Props) {
   };
 
   return (
-    <main className="min-h-screen bg-crema flex items-center justify-center">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
-      <div className="text-center space-y-4">
-        <h1 className="font-cormorant text-5xl text-cafe font-light">
-          {product.name}
-        </h1>
-        <p className="font-dm text-humo text-sm tracking-widest uppercase">
-          Página de producto — pendiente de construir
-        </p>
-      </div>
-    </main>
+      <ProductDetail product={product} />
+    </>
   );
 }
