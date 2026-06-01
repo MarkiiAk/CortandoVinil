@@ -45,7 +45,7 @@ export function HowItWorks() {
             Proceso
           </span>
           <h2 className="font-cormorant text-4xl md:text-5xl text-carbon">
-            Pedirlo es facilísimo
+            Pedir cualquier cosa es facilísimo
           </h2>
         </motion.div>
 

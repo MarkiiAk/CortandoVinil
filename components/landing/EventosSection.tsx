@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -10,7 +10,7 @@ const WHATSAPP_NUMBER = "521XXXXXXXXXX";
 const servicios = [
   {
     id: "invitacion-digital",
-    eyebrow: "Estrella de la noche",
+    eyebrow: "Más pedida",
     name: "Invitación Digital",
     description:
       "Un link. Lo abren en el celular y ya están dentro de tu evento. Animada, interactiva, con tus colores y tu nombre. Sin imagen borrosa de WhatsApp.",
@@ -62,17 +62,17 @@ export function EventosSection() {
           className="mb-14"
         >
           <span className="font-dm text-xs tracking-[0.2em] uppercase text-humo block mb-3">
-            Servicios para eventos
+            Para tu evento
           </span>
-          <div className="flex items-end justify-between">
-            <h2 className="font-cormorant text-4xl md:text-5xl text-carbon max-w-lg leading-[1.1]">
-              Hazlo memorable desde
+          <div className="flex items-end justify-between gap-10">
+            <h2 className="font-cormorant text-4xl md:text-5xl text-carbon leading-[1.1]">
+              ¿Tienes un evento?
               <br />
-              la invitación hasta la decoración
+              También lo armamos.
             </h2>
-            <p className="hidden md:block font-dm text-sm text-humo max-w-xs text-right leading-relaxed">
-              Cada servicio se cotiza por WhatsApp — sin precio fijo, sin
-              sorpresas.
+            <p className="hidden md:block font-dm text-sm text-humo max-w-xs text-right leading-relaxed flex-shrink-0">
+              Junta lo que ya viste — vasos, etiquetas, cajitas — y súmale
+              invitación y decoración. Todo en un solo pedido.
             </p>
           </div>
         </motion.div>
@@ -131,18 +131,7 @@ export function EventosSection() {
                 </p>
 
                 <div className="flex flex-col gap-2">
-                  {s.demoUrl && (
                     <a
-                      href={s.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-dm text-xs text-crema/70 hover:text-crema transition-colors duration-200 underline underline-offset-2"
-                    >
-                      <ExternalLink size={12} />
-                      Ver ejemplo en vivo
-                    </a>
-                  )}
-                  <a
                     href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(s.waMessage)}`}
                     target="_blank"
                     rel="noopener noreferrer"
