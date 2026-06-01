@@ -19,7 +19,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Casa Alessia — Productos Personalizados",
   description:
-    "Vasos, playeras, llaveros y más personalizados con tu nombre y a tu manera. Enviamos a todo México.",
+    "Tu nombre, nuestra casa. Productos personalizados hechos a mano y enviados a todo México.",
 };
 
 export default function RootLayout({

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram } from "lucide-react";
 
 const productLinks = [
@@ -26,9 +27,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-crema/10">
           {/* Brand */}
           <div className="space-y-4">
-            <span className="font-cormorant text-3xl italic text-crema block">
-              Casa Alessia
-            </span>
+            <Image
+              src="/logo.png"
+              alt="Casa Alessia"
+              width={300}
+              height={110}
+              className="h-28 w-auto object-contain brightness-0 invert"
+            />
+            <p className="font-cormorant italic text-lg text-crema/50">
+              Tu nombre, nuestra casa.
+            </p>
             <p className="font-dm text-sm leading-relaxed max-w-xs">
               Cosas bonitas hechas a mano, con tu nombre y a tu manera.
               Te llegan a cualquier parte de México.

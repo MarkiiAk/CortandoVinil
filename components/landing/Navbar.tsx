@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -33,13 +34,18 @@ export function Navbar() {
             : "bg-transparent"
         )}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
           {/* Logo */}
-          <Link
-            href="/"
-            className="font-cormorant text-2xl italic text-cafe tracking-tight"
-          >
-            Casa Alessia
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Casa Alessia"
+              width={300}
+              height={100}
+              style={{ width: "130px", height: "auto" }}
+              className="object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
