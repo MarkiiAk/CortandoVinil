@@ -283,7 +283,7 @@ export const products: Product[] = [
     id: "9",
     slug: "invitacion-digital",
     name: "Invitación Digital",
-    shortDescription: "La invitación que comparten en un solo link.",
+    shortDescription: "La invitación que se comparte en un link.",
     description:
       "Invitación animada e interactiva que se abre en el celular con un link. Sin descargas, sin imprimir. Diseño a medida con los colores, tipografía y tema del evento. Incluye nombre del festejado, fecha, lugar y RSVP.",
     basePrice: 450,
@@ -321,7 +321,7 @@ export const products: Product[] = [
         placeholder: "Ej: Salón Los Arcos, Monterrey NL",
       },
     ],
-    images: [],
+    images: ["/products/invitacion-digital.jpg"],
     available: true,
   },
   {
@@ -357,7 +357,7 @@ export const products: Product[] = [
         options: ["20–30", "30–50", "50–80", "80–100", "Más de 100"],
       },
     ],
-    images: [],
+    images: ["/products/invitacion-fisica.jpg"],
     available: true,
   },
   {
@@ -397,7 +397,7 @@ export const products: Product[] = [
         ],
       },
     ],
-    images: [],
+    images: ["/products/mampara-personalizada.jpg"],
     available: true,
   },
 ];
