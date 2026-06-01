@@ -24,6 +24,7 @@ export interface Product {
   name: string;
   shortDescription: string;
   description: string;
+  seoDescription: string;
   basePrice: number;
   category: ProductCategory;
   customizationFields: CustomizationField[];
@@ -39,6 +40,8 @@ export const products: Product[] = [
     shortDescription: "El que nadie en la oficina te va a robar.",
     description:
       "Vaso de acero inoxidable con tu nombre, frase o diseño en vinilo de alta calidad. Apto para bebidas frías y calientes.",
+    seoDescription:
+      "Vaso de acero inoxidable personalizado con tu nombre o frase en vinilo de alta calidad. El regalo personalizado perfecto para el trabajo o el hogar. Enviamos a toda la república mexicana.",
     basePrice: 280,
     category: "vasos",
     customizationFields: [
@@ -68,6 +71,8 @@ export const products: Product[] = [
     shortDescription: "Tu frase favorita, puesta. Para presumir sin decir nada.",
     description:
       "Playera básica de algodón con tu texto, frase o nombre aplicado con HTV Iron-On de alta durabilidad. Resistente al lavado.",
+    seoDescription:
+      "Playera personalizada con tu texto o nombre en HTV Iron-On de alta durabilidad. Ideal para despedidas de soltera, eventos grupales o regalos personalizados con nombre. Enviamos a todo México.",
     basePrice: 280,
     category: "ropa",
     customizationFields: [
@@ -104,6 +109,8 @@ export const products: Product[] = [
     shortDescription: "Un detalle chiquito que dice mucho.",
     description:
       "Llavero de acrílico cortado con Cricut con tu nombre, iniciales o forma especial. Acabado pulido y elegante.",
+    seoDescription:
+      "Llavero personalizado de acrílico con tu nombre o iniciales. El recuerdo perfecto para XV años, bodas y graduaciones. Hecho a mano con Cricut, acabado elegante y duradero.",
     basePrice: 90,
     category: "llaveros",
     customizationFields: [
@@ -133,6 +140,8 @@ export const products: Product[] = [
     shortDescription: "Para que tu evento se vea cuidado hasta el último detalle.",
     description:
       "Set de 12 etiquetas personalizadas para tu evento especial. Papel sticker premium, diseño coordinado con nombre y fecha.",
+    seoDescription:
+      "Set de 12 etiquetas personalizadas para baby shower, XV años, boda o cumpleaños. Papel sticker premium con nombre y fecha. Las etiquetas para fiesta perfectas, enviadas a toda la república.",
     basePrice: 130,
     category: "fiestas",
     customizationFields: [
@@ -163,6 +172,8 @@ export const products: Product[] = [
     shortDescription: "Cuando el envoltorio importa tanto como lo que va adentro.",
     description:
       "Cajita armada de cartulina troquelada con tu dedicatoria personalizada. Perfecta para sorprender a quien más quieres.",
+    seoDescription:
+      "Cajita de regalo personalizada con tu dedicatoria. Packaging hecho a mano con cartulina premium. El detalle perfecto para sorprender: envoltorio personalizado para cualquier ocasión.",
     basePrice: 110,
     category: "packaging",
     customizationFields: [
@@ -185,6 +196,8 @@ export const products: Product[] = [
     shortDescription: "Ese detalle que hace que la mesa se vea pensada.",
     description:
       "Set de 4 portavasos de acrílico con diseño en vinilo. Minimalistas y elegantes, perfectos para el hogar o como regalo.",
+    seoDescription:
+      "Set de 4 portavasos personalizados de acrílico con vinilo. Coasters elegantes con tu nombre o inicial. Regalo personalizado ideal para el hogar o para eventos corporativos.",
     basePrice: 220,
     category: "vasos",
     customizationFields: [
@@ -214,6 +227,8 @@ export const products: Product[] = [
     shortDescription: "El regalo que se siente pensado.",
     description:
       "Vela artesanal con etiqueta personalizada. Elige el aroma, el color de la cera y el texto de la etiqueta. Perfecta para regalar o decorar.",
+    seoDescription:
+      "Vela artesanal personalizada con etiqueta a tu medida. Elige el aroma, color de cera y texto. El regalo personalizado que se siente pensado, listo para entregar. Enviamos a todo México.",
     basePrice: 160,
     category: "velas",
     customizationFields: [
@@ -250,6 +265,8 @@ export const products: Product[] = [
     shortDescription: "Listas para regalar sin pensarlo dos veces.",
     description:
       "Set de 3 velas artesanales en diferentes tamaños con etiquetas personalizadas y coordinadas. Presentación en caja kraft.",
+    seoDescription:
+      "Set de 3 velas artesanales personalizadas en caja kraft, listas para regalar. Etiquetas coordinadas con tu texto. El regalo personalizado perfecto para Día de las Madres, bodas o cualquier ocasión.",
     basePrice: 380,
     category: "velas",
     customizationFields: [
@@ -286,6 +303,8 @@ export const products: Product[] = [
     shortDescription: "Tu invitación, en un link que se ve increíble.",
     description:
       "Invitación animada e interactiva que se abre en el celular con un link. Sin descargas, sin imprimir. Diseño a medida con los colores, tipografía y tema del evento. Incluye nombre del festejado, fecha, lugar y RSVP.",
+    seoDescription:
+      "Invitación digital personalizada y animada para baby shower, XV años, boda o graduación. Se abre en el celular con un link, sin descargas. Diseño a medida con los colores y tema de tu evento.",
     basePrice: 500,
     category: "invitaciones",
     customizationFields: [
@@ -331,6 +350,8 @@ export const products: Product[] = [
     shortDescription: "Para quienes todavía merecen algo en las manos.",
     description:
       "Invitación impresa en papel premium con diseño personalizado. Incluye sobre. El diseño va coordinado con el tema del evento. Precio por lote mínimo de 20 piezas.",
+    seoDescription:
+      "Invitaciones físicas personalizadas en papel premium para bodas, XV años, baby shower y más. Diseño a medida con el tema de tu evento. Lote mínimo de 20 piezas, incluye sobre. Enviamos a México.",
     basePrice: 30,
     category: "invitaciones",
     customizationFields: [
@@ -367,6 +388,8 @@ export const products: Product[] = [
     shortDescription: "El backdrop que se roba el evento — con tu texto, tu estilo.",
     description:
       "Vinilo de corte aplicado sobre mampara para eventos: baby showers, bodas, XV años, graduaciones. El texto, nombre o frase que quieras en el estilo de tu evento. La mampara se cotiza aparte — puedes traer la tuya, comprarla o consultarnos opciones de renta de mobiliario.",
+    seoDescription:
+      "Mampara personalizada con vinilo de corte para bodas, baby shower, XV años y graduaciones. El backdrop que se roba el evento con tu texto y estilo. Hecho a mano con Cricut en México.",
     basePrice: 450,
     category: "eventos",
     customizationFields: [
