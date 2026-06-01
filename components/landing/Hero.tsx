@@ -8,7 +8,7 @@ import { products } from "@/lib/products";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const words = ["nombre", "estilo", "esencia", "historia", "personalidad", "momento", "festejo"];
+const words = ["nombre", "estilo", "esencia", "historia", "gusto", "momento", "festejo", "imagen"];
 
 const container = {
   hidden: {},
