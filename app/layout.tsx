@@ -17,9 +17,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "MiMarca — Productos Personalizados",
+  title: "Casa Alessia — Productos Personalizados",
   description:
-    "Vasos, playeras, llaveros y más personalizados con amor y precisión. Enviamos a todo México.",
+    "Vasos, playeras, llaveros y más personalizados con tu nombre y a tu manera. Enviamos a todo México.",
 };
 
 export default function RootLayout({

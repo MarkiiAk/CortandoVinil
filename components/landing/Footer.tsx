@@ -27,7 +27,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <span className="font-cormorant text-3xl italic text-crema block">
-              MiMarca
+              Casa Alessia
             </span>
             <p className="font-dm text-sm leading-relaxed max-w-xs">
               Cosas bonitas hechas a mano, con tu nombre y a tu manera.
@@ -87,7 +87,7 @@ export function Footer() {
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-dm text-xs text-crema/25">
-            © {new Date().getFullYear()} MiMarca. Todos los derechos reservados.
+            © {new Date().getFullYear()} Casa Alessia. Todos los derechos reservados.
           </p>
           <p className="font-dm text-xs text-crema/25">
             Hecho en México

@@ -39,7 +39,7 @@ export function Navbar() {
             href="/"
             className="font-cormorant text-2xl italic text-cafe tracking-tight"
           >
-            MiMarca
+            Casa Alessia
           </Link>
 
           {/* Desktop nav */}
