@@ -65,7 +65,7 @@ export const products: Product[] = [
     id: "2",
     slug: "playera-personalizada",
     name: "Playera con Texto",
-    shortDescription: "Tu frase, donde todos la vean. Aguanta lavada tras lavada.",
+    shortDescription: "Tu frase favorita, puesta. Para presumir sin decir nada.",
     description:
       "Playera básica de algodón con tu texto, frase o nombre aplicado con HTV Iron-On de alta durabilidad. Resistente al lavado.",
     basePrice: 200,
@@ -182,7 +182,7 @@ export const products: Product[] = [
     id: "6",
     slug: "portavasos-set",
     name: "Portavasos (Set x4)",
-    shortDescription: "Le dan ese toque a cualquier mesa o reunión.",
+    shortDescription: "Ese detalle que hace que la mesa se vea pensada.",
     description:
       "Set de 4 portavasos de acrílico con diseño en vinilo. Minimalistas y elegantes, perfectos para el hogar o como regalo.",
     basePrice: 180,
@@ -283,7 +283,7 @@ export const products: Product[] = [
     id: "9",
     slug: "invitacion-digital",
     name: "Invitación Digital",
-    shortDescription: "La invitación que se comparte en un link.",
+    shortDescription: "Tu invitación, en un link que se ve increíble.",
     description:
       "Invitación animada e interactiva que se abre en el celular con un link. Sin descargas, sin imprimir. Diseño a medida con los colores, tipografía y tema del evento. Incluye nombre del festejado, fecha, lugar y RSVP.",
     basePrice: 450,
@@ -364,7 +364,7 @@ export const products: Product[] = [
     id: "11",
     slug: "mampara-personalizada",
     name: "Mampara Personalizada",
-    shortDescription: "El backdrop de tu evento con tu texto en vinilo.",
+    shortDescription: "El backdrop que se roba el evento — con tu texto, tu estilo.",
     description:
       "Vinilo de corte aplicado sobre mampara para eventos: baby showers, bodas, XV años, graduaciones. El texto, nombre o frase que quieras en el estilo de tu evento. La mampara se cotiza aparte — puedes traer la tuya, comprarla o consultarnos opciones de renta de mobiliario.",
     basePrice: 350,

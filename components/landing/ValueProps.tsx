@@ -19,9 +19,9 @@ const props = [
   },
   {
     number: "03",
-    title: "Bien hecho, sin sorpresas",
+    title: "Bonito de verdad, sin sustos",
     description:
-      "Cuidamos cada detalle para que lo que recibes se vea igual de bonito que como lo imaginaste. Sin defectos, sin esperas eternas.",
+      "Cuidamos cada detalle para que lo que recibes se vea igual de bonito que como lo imaginaste. Sin defectos, sin dramas.",
   },
 ];
 
@@ -36,7 +36,7 @@ export function ValueProps() {
           transition={{ duration: 0.6, ease }}
           className="font-cormorant text-4xl md:text-5xl text-carbon text-center mb-16"
         >
-          Por qué la gente nos elige
+          Por qué te va a encantar pedirnos
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-cafe/10">
