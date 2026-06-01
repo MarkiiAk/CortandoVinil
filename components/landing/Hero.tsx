@@ -1,10 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { products } from "@/lib/products";
 
 const ease = [0.22, 1, 0.36, 1] as const;
+
+const words = ["nombre", "estilo", "esencia", "historia", "personalidad", "momento"];
 
 const container = {
   hidden: {},
@@ -18,6 +21,14 @@ const item = {
 
 export function Hero() {
   const heroProducts = products.slice(0, 4);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((i) => (i + 1) % words.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
@@ -44,7 +55,22 @@ export function Hero() {
           >
             Hecho para ti,
             <br />
-            <span className="text-cafe">con tu nombre.</span>
+            <span>con tu </span>
+            <span className="relative inline-block">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={words[index]}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.35, ease }}
+                  className="inline-block text-cafe"
+                >
+                  {words[index]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+            .
           </motion.h1>
 
           <motion.p
