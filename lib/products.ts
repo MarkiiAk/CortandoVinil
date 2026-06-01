@@ -56,7 +56,7 @@ export const products: Product[] = [
         options: ["Negro", "Blanco", "Dorado", "Rosa", "Azul marino"],
       },
     ],
-    images: [],
+    images: ["/products/vaso-personalizado.jpg"],
     available: true,
   },
   {
@@ -92,7 +92,7 @@ export const products: Product[] = [
         options: ["XS", "S", "M", "L", "XL"],
       },
     ],
-    images: [],
+    images: ["/products/playera-personalizada.jpg"],
     available: true,
   },
   {
@@ -121,7 +121,7 @@ export const products: Product[] = [
         options: ["Transparente", "Negro", "Blanco", "Rosa", "Dorado espejo"],
       },
     ],
-    images: [],
+    images: ["/products/llavero-personalizado.jpg"],
     available: true,
   },
   {
@@ -151,7 +151,7 @@ export const products: Product[] = [
         placeholder: "Ej: 14 de febrero 2026",
       },
     ],
-    images: [],
+    images: ["/products/etiquetas-fiesta.jpg"],
     available: true,
   },
   {

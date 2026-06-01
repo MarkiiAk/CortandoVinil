@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { products } from "@/lib/products";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -116,14 +117,32 @@ export function Hero() {
             >
               <Link
                 href={`/shop/${product.slug}`}
-                className="group aspect-square bg-arena rounded-lg flex flex-col items-center justify-center p-5 hover:bg-arena-dark transition-colors duration-300"
+                className="group relative aspect-square bg-arena rounded-lg overflow-hidden flex flex-col items-center justify-center hover:bg-arena-dark transition-colors duration-300"
               >
-                <span className="font-cormorant text-base md:text-lg italic text-cafe/45 text-center group-hover:text-cafe/70 transition-colors duration-300 leading-tight">
-                  {product.name}
-                </span>
-                <span className="font-dm text-xs text-humo mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Hazlo tuyo →
-                </span>
+                {product.images[0] ? (
+                  <>
+                    <Image
+                      src={product.images[0]}
+                      alt={product.name}
+                      fill
+                      className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-carbon/0 group-hover:bg-carbon/20 transition-colors duration-300" />
+                    <span className="absolute bottom-3 left-3 right-3 font-dm text-xs text-crema opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Hazlo tuyo →
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className="font-cormorant text-base md:text-lg italic text-cafe/45 text-center group-hover:text-cafe/70 transition-colors duration-300 leading-tight p-5">
+                      {product.name}
+                    </span>
+                    <span className="font-dm text-xs text-humo mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Hazlo tuyo →
+                    </span>
+                  </>
+                )}
               </Link>
             </motion.div>
           ))}
