@@ -63,9 +63,9 @@ export function CustomOrder() {
               en mente?
             </h2>
             <p className="font-dm text-base text-humo leading-relaxed max-w-md">
-              Si traes una idea dando vueltas y no la ves en el catálogo,
-              cuéntanosla. Por más específica que suene, entre los dos
-              encontramos cómo hacerla realidad.
+              Si traes algo en mente que no ves en el catálogo, cuéntanosla.
+              Por más dispersa que se sienta ahorita, entre los dos
+              la aterrizamos y la hacemos realidad.
             </p>
 
             {sent ? (
