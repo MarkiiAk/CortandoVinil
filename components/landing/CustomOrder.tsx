@@ -8,12 +8,12 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const ideas = [
   "Mesas de dulces",
+  "Mamparas para evento",
+  "Invitaciones digitales",
+  "Invitaciones físicas",
   "Recuerdos para invitados",
-  "Decoración temática",
   "Merch para tu negocio",
-  "Regalos para tu equipo",
   "Sets que combinan",
-  "Empaques especiales",
   "Lo que se te ocurra",
 ];
 

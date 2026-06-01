@@ -23,10 +23,14 @@ const categories: { label: string; value: FilterValue }[] = [
 export function ShopClient() {
   const [active, setActive] = useState<FilterValue>("all");
 
+  const catalogProducts = products.filter(
+    (p) => p.category !== "eventos" && p.category !== "invitaciones"
+  );
+
   const filtered =
     active === "all"
-      ? products
-      : products.filter((p) => p.category === active);
+      ? catalogProducts
+      : catalogProducts.filter((p) => p.category === active);
 
   return (
     <main className="min-h-screen bg-crema">

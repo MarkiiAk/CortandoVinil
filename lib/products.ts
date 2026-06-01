@@ -4,7 +4,9 @@ export type ProductCategory =
   | "llaveros"
   | "fiestas"
   | "packaging"
-  | "velas";
+  | "velas"
+  | "eventos"
+  | "invitaciones";
 
 export interface CustomizationField {
   id: string;
@@ -272,6 +274,127 @@ export const products: Product[] = [
         type: "select",
         required: true,
         options: ["Blanco", "Negro", "Crema", "Rosa palo", "Terracota"],
+      },
+    ],
+    images: [],
+    available: true,
+  },
+  {
+    id: "9",
+    slug: "invitacion-digital",
+    name: "Invitación Digital",
+    shortDescription: "La invitación que comparten en un solo link.",
+    description:
+      "Invitación animada e interactiva que se abre en el celular con un link. Sin descargas, sin imprimir. Diseño a medida con los colores, tipografía y tema del evento. Incluye nombre del festejado, fecha, lugar y RSVP.",
+    basePrice: 450,
+    category: "invitaciones",
+    customizationFields: [
+      {
+        id: "evento",
+        label: "Tipo de evento",
+        type: "select",
+        required: true,
+        options: ["Baby shower", "Cumpleaños", "XV años", "Boda", "Graduación", "Otro"],
+      },
+      {
+        id: "nombre",
+        label: "Nombre del festejado",
+        type: "text",
+        required: true,
+        maxLength: 40,
+        placeholder: "Ej: Alessia, o Ana & Carlos",
+      },
+      {
+        id: "fecha",
+        label: "Fecha y hora del evento",
+        type: "text",
+        required: true,
+        maxLength: 40,
+        placeholder: "Ej: Sábado 14 de junio, 4:00 PM",
+      },
+      {
+        id: "lugar",
+        label: "Lugar o dirección",
+        type: "text",
+        required: false,
+        maxLength: 80,
+        placeholder: "Ej: Salón Los Arcos, Monterrey NL",
+      },
+    ],
+    images: [],
+    available: true,
+  },
+  {
+    id: "10",
+    slug: "invitacion-fisica",
+    name: "Invitación Física",
+    shortDescription: "Para quienes todavía merecen algo en las manos.",
+    description:
+      "Invitación impresa en papel premium con diseño personalizado. Incluye sobre. El diseño va coordinado con el tema del evento. Precio por lote mínimo de 20 piezas.",
+    basePrice: 25,
+    category: "invitaciones",
+    customizationFields: [
+      {
+        id: "evento",
+        label: "Tipo de evento",
+        type: "select",
+        required: true,
+        options: ["Baby shower", "Cumpleaños", "XV años", "Boda", "Graduación", "Otro"],
+      },
+      {
+        id: "nombre",
+        label: "Nombre del festejado",
+        type: "text",
+        required: true,
+        maxLength: 40,
+        placeholder: "Ej: Sofía, o Juan & Mariana",
+      },
+      {
+        id: "cantidad",
+        label: "¿Cuántas piezas necesitas?",
+        type: "select",
+        required: true,
+        options: ["20–30", "30–50", "50–80", "80–100", "Más de 100"],
+      },
+    ],
+    images: [],
+    available: true,
+  },
+  {
+    id: "11",
+    slug: "mampara-personalizada",
+    name: "Mampara Personalizada",
+    shortDescription: "El backdrop de tu evento con tu texto en vinilo.",
+    description:
+      "Vinilo de corte aplicado sobre mampara para eventos: baby showers, bodas, XV años, graduaciones. El texto, nombre o frase que quieras en el estilo de tu evento. La mampara se cotiza aparte — puedes traer la tuya, comprarla o consultarnos opciones de renta de mobiliario.",
+    basePrice: 350,
+    category: "eventos",
+    customizationFields: [
+      {
+        id: "texto",
+        label: "Texto o frase para la mampara",
+        type: "text",
+        required: true,
+        maxLength: 40,
+        placeholder: "Ej: hello Baby, Sofía XV, Mr & Mrs García",
+      },
+      {
+        id: "color-vinilo",
+        label: "Color del vinilo",
+        type: "select",
+        required: true,
+        options: ["Blanco", "Negro", "Dorado", "Cobre", "Rosa palo", "Crema"],
+      },
+      {
+        id: "mampara",
+        label: "¿Necesitas la mampara?",
+        type: "select",
+        required: true,
+        options: [
+          "Solo el vinilo (yo pongo la mampara)",
+          "Quiero cotizar compra de mampara",
+          "Quiero cotizar renta de mampara",
+        ],
       },
     ],
     images: [],
