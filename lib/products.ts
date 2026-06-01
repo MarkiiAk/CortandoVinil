@@ -39,7 +39,7 @@ export const products: Product[] = [
     shortDescription: "El que nadie en la oficina te va a robar.",
     description:
       "Vaso de acero inoxidable con tu nombre, frase o diseño en vinilo de alta calidad. Apto para bebidas frías y calientes.",
-    basePrice: 150,
+    basePrice: 280,
     category: "vasos",
     customizationFields: [
       {
@@ -68,7 +68,7 @@ export const products: Product[] = [
     shortDescription: "Tu frase favorita, puesta. Para presumir sin decir nada.",
     description:
       "Playera básica de algodón con tu texto, frase o nombre aplicado con HTV Iron-On de alta durabilidad. Resistente al lavado.",
-    basePrice: 200,
+    basePrice: 280,
     category: "ropa",
     customizationFields: [
       {
@@ -104,7 +104,7 @@ export const products: Product[] = [
     shortDescription: "Un detalle chiquito que dice mucho.",
     description:
       "Llavero de acrílico cortado con Cricut con tu nombre, iniciales o forma especial. Acabado pulido y elegante.",
-    basePrice: 80,
+    basePrice: 90,
     category: "llaveros",
     customizationFields: [
       {
@@ -133,7 +133,7 @@ export const products: Product[] = [
     shortDescription: "Para que tu evento se vea cuidado hasta el último detalle.",
     description:
       "Set de 12 etiquetas personalizadas para tu evento especial. Papel sticker premium, diseño coordinado con nombre y fecha.",
-    basePrice: 120,
+    basePrice: 130,
     category: "fiestas",
     customizationFields: [
       {
@@ -163,7 +163,7 @@ export const products: Product[] = [
     shortDescription: "Cuando el envoltorio importa tanto como lo que va adentro.",
     description:
       "Cajita armada de cartulina troquelada con tu dedicatoria personalizada. Perfecta para sorprender a quien más quieres.",
-    basePrice: 90,
+    basePrice: 110,
     category: "packaging",
     customizationFields: [
       {
@@ -185,7 +185,7 @@ export const products: Product[] = [
     shortDescription: "Ese detalle que hace que la mesa se vea pensada.",
     description:
       "Set de 4 portavasos de acrílico con diseño en vinilo. Minimalistas y elegantes, perfectos para el hogar o como regalo.",
-    basePrice: 180,
+    basePrice: 220,
     category: "vasos",
     customizationFields: [
       {
@@ -214,7 +214,7 @@ export const products: Product[] = [
     shortDescription: "El regalo que se siente pensado.",
     description:
       "Vela artesanal con etiqueta personalizada. Elige el aroma, el color de la cera y el texto de la etiqueta. Perfecta para regalar o decorar.",
-    basePrice: 130,
+    basePrice: 160,
     category: "velas",
     customizationFields: [
       {
@@ -250,7 +250,7 @@ export const products: Product[] = [
     shortDescription: "Listas para regalar sin pensarlo dos veces.",
     description:
       "Set de 3 velas artesanales en diferentes tamaños con etiquetas personalizadas y coordinadas. Presentación en caja kraft.",
-    basePrice: 320,
+    basePrice: 380,
     category: "velas",
     customizationFields: [
       {
@@ -286,7 +286,7 @@ export const products: Product[] = [
     shortDescription: "Tu invitación, en un link que se ve increíble.",
     description:
       "Invitación animada e interactiva que se abre en el celular con un link. Sin descargas, sin imprimir. Diseño a medida con los colores, tipografía y tema del evento. Incluye nombre del festejado, fecha, lugar y RSVP.",
-    basePrice: 450,
+    basePrice: 500,
     category: "invitaciones",
     customizationFields: [
       {
@@ -331,7 +331,7 @@ export const products: Product[] = [
     shortDescription: "Para quienes todavía merecen algo en las manos.",
     description:
       "Invitación impresa en papel premium con diseño personalizado. Incluye sobre. El diseño va coordinado con el tema del evento. Precio por lote mínimo de 20 piezas.",
-    basePrice: 25,
+    basePrice: 30,
     category: "invitaciones",
     customizationFields: [
       {
@@ -367,7 +367,7 @@ export const products: Product[] = [
     shortDescription: "El backdrop que se roba el evento — con tu texto, tu estilo.",
     description:
       "Vinilo de corte aplicado sobre mampara para eventos: baby showers, bodas, XV años, graduaciones. El texto, nombre o frase que quieras en el estilo de tu evento. La mampara se cotiza aparte — puedes traer la tuya, comprarla o consultarnos opciones de renta de mobiliario.",
-    basePrice: 350,
+    basePrice: 450,
     category: "eventos",
     customizationFields: [
       {
