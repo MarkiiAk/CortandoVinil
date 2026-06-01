@@ -128,20 +128,25 @@ export function Hero() {
                       className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
                       sizes="(max-width: 1024px) 50vw, 25vw"
                     />
-                    <div className="absolute inset-0 bg-carbon/0 group-hover:bg-carbon/20 transition-colors duration-300" />
-                    <span className="absolute bottom-3 left-3 right-3 font-dm text-xs text-crema opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      Hazlo tuyo →
-                    </span>
+                    {/* Gradient label — siempre visible */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-cafe/75 to-transparent pt-10 pb-4 px-4">
+                      <span className="font-cormorant italic text-lg text-crema leading-tight block">
+                        {product.name}
+                      </span>
+                      <span className="font-dm text-xs text-crema/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Hazlo tuyo →
+                      </span>
+                    </div>
                   </>
                 ) : (
-                  <>
-                    <span className="font-cormorant text-base md:text-lg italic text-cafe/45 text-center group-hover:text-cafe/70 transition-colors duration-300 leading-tight p-5">
+                  <div className="w-full h-full flex flex-col items-center justify-center p-5">
+                    <span className="font-cormorant text-base md:text-lg italic text-cafe/45 text-center group-hover:text-cafe/70 transition-colors duration-300 leading-tight">
                       {product.name}
                     </span>
                     <span className="font-dm text-xs text-humo mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Hazlo tuyo →
                     </span>
-                  </>
+                  </div>
                 )}
               </Link>
             </motion.div>
