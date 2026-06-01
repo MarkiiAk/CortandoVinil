@@ -6,16 +6,14 @@ import { MessageCircle } from "lucide-react";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const ideas = [
-  "Cajitas felices para mesa de dulces",
-  "Velas personalizadas",
-  "Mesa de dulces completa",
+  "Eventos y celebraciones",
+  "Recuerdos personalizados",
+  "Decoración temática",
   "Merch para tu negocio",
-  "Recuerdos de boda",
-  "Decoración para XV años",
-  "Etiquetas para tus productos",
   "Regalos corporativos",
-  "Baby shower temático",
-  "Cualquier cosa que imagines",
+  "Sets coordinados",
+  "Packaging especial",
+  "Lo que se te ocurra",
 ];
 
 const WHATSAPP_URL =
@@ -43,9 +41,8 @@ export function CustomOrder() {
               lo que buscas?
             </h2>
             <p className="font-dm text-base text-humo leading-relaxed max-w-md">
-              El catálogo es solo el punto de partida. Si tienes una idea —
-              unas cajitas para tu mesa de dulces, velas para tu evento,
-              decoración temática — platicamos y lo hacemos realidad.
+              Si tienes algo en mente que no ves en el catálogo,
+              platicamos. Mandanos tu idea y encontramos la forma de hacerla realidad.
               <br />
               <br />
               No hay idea demasiado específica.
