@@ -80,6 +80,33 @@
 
 ---
 
+## Arquitectura WhatsApp — Roadmap (no implementar aún)
+
+El flujo planeado cuando se conecte el ERP/LLM:
+
+```
+Cliente llena form → abre WhatsApp pre-llenado
+        ↓
+WhatsApp Business API recibe mensaje
+        ↓
+Webhook → LLM maneja la conversación
+  - Cotiza productos del catálogo
+  - Resuelve dudas de personalización
+  - Recopila detalles del pedido
+        ↓
+LLM detecta límite (pago, solicitud compleja, escalación)
+        ↓
+Conversación cambia a MODO HUMANO
+  - IA se silencia
+  - Notificación al dueño
+  - Dueño toma el hilo desde donde quedó la IA
+```
+
+**Punto de integración en el código:** `CustomOrder.tsx → handleSubmit()`
+Cuando llegue el momento, solo se reemplaza el `window.open(wa.me...)` por un `fetch()` al endpoint del ERP. El formulario no cambia.
+
+---
+
 ## Deuda Técnica
 
 *(Llenar conforme avance el desarrollo)*
