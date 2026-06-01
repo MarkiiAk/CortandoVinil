@@ -306,7 +306,7 @@ export const products: Product[] = [
     seoDescription:
       "Invitación digital personalizada y animada para baby shower, XV años, boda o graduación. Se abre en el celular con un link, sin descargas. Diseño a medida con los colores y tema de tu evento.",
     basePrice: 500,
-    category: "invitaciones",
+    category: "fiestas",
     customizationFields: [
       {
         id: "evento",
@@ -353,7 +353,7 @@ export const products: Product[] = [
     seoDescription:
       "Invitaciones físicas personalizadas en papel premium para bodas, XV años, baby shower y más. Diseño a medida con el tema de tu evento. Lote mínimo de 20 piezas, incluye sobre. Enviamos a México.",
     basePrice: 30,
-    category: "invitaciones",
+    category: "fiestas",
     customizationFields: [
       {
         id: "evento",

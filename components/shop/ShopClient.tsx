@@ -24,7 +24,7 @@ export function ShopClient() {
   const [active, setActive] = useState<FilterValue>("all");
 
   const catalogProducts = products.filter(
-    (p) => p.category !== "eventos" && p.category !== "invitaciones"
+    (p) => p.category !== "eventos"
   );
 
   const filtered =
