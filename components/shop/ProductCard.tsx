@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Badge } from "@/components/ui/Badge";
 import type { Product } from "@/lib/products";
 
 interface ProductCardProps {
@@ -33,12 +32,9 @@ export function ProductCard({ product }: ProductCardProps) {
 
       {/* Info */}
       <div className="space-y-1.5">
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="font-cormorant text-xl text-carbon group-hover:text-cafe transition-colors duration-200 leading-tight">
-            {product.name}
-          </h3>
-          <Badge className="flex-shrink-0 mt-0.5">Personalizable</Badge>
-        </div>
+        <h3 className="font-cormorant text-xl text-carbon group-hover:text-cafe transition-colors duration-200 leading-tight">
+          {product.name}
+        </h3>
         <p className="font-dm text-sm text-humo line-clamp-1">
           {product.shortDescription}
         </p>
