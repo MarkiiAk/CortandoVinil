@@ -158,7 +158,7 @@ export function ProductDetail({ product, related }: Props) {
                         />
                         {/* Badge inferior */}
                         <div className="absolute bottom-0 left-0 right-0 bg-crema/85 backdrop-blur-sm px-4 py-2.5 flex items-center justify-center">
-                          <span className="font-dm text-[10px] tracking-wide text-humo text-center leading-relaxed">
+                          <span className="font-dm text-[11px] tracking-wide text-carbon/65 text-center leading-relaxed">
                             Imagen de referencia · cuéntanos tu idea y la hacemos realidad
                           </span>
                         </div>
