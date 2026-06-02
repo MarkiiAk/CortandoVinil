@@ -11,7 +11,7 @@ export type ProductCategory =
 export interface CustomizationField {
   id: string;
   label: string;
-  type: "text" | "select" | "color";
+  type: "text" | "select" | "color" | "pattern";
   required: boolean;
   maxLength?: number;
   placeholder?: string;
@@ -46,12 +46,26 @@ export const products: Product[] = [
     category: "vasos",
     customizationFields: [
       {
+        id: "tipo-vaso",
+        label: "Tipo de vaso",
+        type: "select",
+        required: true,
+        options: ["Vaso de acero (20 oz)", "Vaso de vidrio", "Mug cerámica", "Tumbler con popote"],
+      },
+      {
         id: "texto",
         label: "¿Qué quieres que diga el vaso?",
         type: "text",
         required: true,
         maxLength: 30,
         placeholder: "Ej: Ana, o 'Café antes que tú'",
+      },
+      {
+        id: "patron",
+        label: "Estilo del diseño",
+        type: "pattern",
+        required: true,
+        options: ["Limpio", "Con marco", "Con laurel", "Con flores", "Con doble línea"],
       },
       {
         id: "color-vinilo",

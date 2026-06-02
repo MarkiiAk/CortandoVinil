@@ -29,12 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: "es_MX",
       url: `https://mimarca.mx/shop/${product.slug}`,
       siteName: "Casa Alessia",
-      images: [
-        {
-          url: "/logo.png",
-          alt: `${product.name} Personalizado | Casa Alessia`,
-        },
-      ],
+      images: [{ url: "/logo.png", alt: `${product.name} Personalizado | Casa Alessia` }],
     },
     twitter: {
       card: "summary_large_image",
@@ -52,19 +47,18 @@ export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
   const product = getProductBySlug(slug);
 
-  if (!product) {
-    notFound();
-  }
+  if (!product) notFound();
+
+  const related = products
+    .filter((p) => p.category === product.category && p.id !== product.id && p.available)
+    .slice(0, 4);
 
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: `${product.name} Personalizado`,
     description: product.description,
-    brand: {
-      "@type": "Brand",
-      name: "Casa Alessia",
-    },
+    brand: { "@type": "Brand", name: "Casa Alessia" },
     offers: {
       "@type": "Offer",
       price: product.basePrice,
@@ -73,10 +67,7 @@ export default async function ProductPage({ params }: Props) {
         ? "https://schema.org/InStock"
         : "https://schema.org/OutOfStock",
       url: `https://mimarca.mx/shop/${product.slug}`,
-      seller: {
-        "@type": "Organization",
-        name: "Casa Alessia",
-      },
+      seller: { "@type": "Organization", name: "Casa Alessia" },
     },
   };
 
@@ -86,7 +77,7 @@ export default async function ProductPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
-      <ProductDetail product={product} />
+      <ProductDetail product={product} related={related} />
     </>
   );
 }
