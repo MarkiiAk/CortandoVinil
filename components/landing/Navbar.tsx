@@ -3,9 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ShoppingBag } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useCartStore } from "@/store/cart";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -18,8 +17,6 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const { count, openCart } = useCartStore();
-  const cartCount = count();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -64,26 +61,8 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop: CTA + carrito */}
-          <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={openCart}
-              className="relative text-cafe p-1 hover:text-cafe-dark transition-colors"
-              aria-label="Abrir carrito"
-            >
-              <ShoppingBag size={22} strokeWidth={1.5} />
-              {cartCount > 0 && (
-                <motion.span
-                  key={cartCount}
-                  initial={{ scale: 0.6, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  className="absolute -top-1 -right-1 w-4 h-4 bg-cafe text-crema font-dm text-[10px] rounded-full flex items-center justify-center"
-                >
-                  {cartCount > 9 ? "9+" : cartCount}
-                </motion.span>
-              )}
-            </button>
-
+          {/* Desktop CTA */}
+          <div className="hidden md:block">
             <Link
               href="/shop"
               className="font-dm text-sm border border-cafe text-cafe px-5 py-2.5 hover:bg-cafe hover:text-crema transition-all duration-200"
@@ -92,34 +71,14 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile: carrito + hamburguesa */}
-          <div className="md:hidden flex items-center gap-3">
-            <button
-              onClick={openCart}
-              className="relative text-cafe p-1"
-              aria-label="Abrir carrito"
-            >
-              <ShoppingBag size={21} strokeWidth={1.5} />
-              {cartCount > 0 && (
-                <motion.span
-                  key={cartCount}
-                  initial={{ scale: 0.6, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  className="absolute -top-1 -right-1 w-4 h-4 bg-cafe text-crema font-dm text-[10px] rounded-full flex items-center justify-center"
-                >
-                  {cartCount > 9 ? "9+" : cartCount}
-                </motion.span>
-              )}
-            </button>
-
-            <button
-              className="text-cafe p-1"
-              onClick={() => setOpen(!open)}
-              aria-label="Menú"
-            >
-              {open ? <X size={22} /> : <Menu size={22} />}
-            </button>
-          </div>
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden text-cafe p-1"
+            onClick={() => setOpen(!open)}
+            aria-label="Menú"
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </header>
 

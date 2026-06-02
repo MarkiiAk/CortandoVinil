@@ -12,7 +12,7 @@ import { Footer } from "@/components/landing/Footer";
 export const metadata: Metadata = {
   title: "Productos Personalizados con tu Nombre",
   description:
-    "Vasos, playeras, llaveros y más con tu nombre o frase favorita. Hecho a mano con Cricut. Enviamos a toda la república mexicana.",
+    "Vasos, playeras, llaveros y más con tu nombre o frase favorita. Hecho a mano con precisión. Enviamos a toda la república mexicana.",
   keywords: [
     "productos personalizados",
     "vasos personalizados",
@@ -69,7 +69,7 @@ const organizationSchema = {
   name: "Casa Alessia",
   url: "https://mimarca.mx",
   description:
-    "Productos personalizados hechos a mano con Cricut: vasos, playeras, llaveros, etiquetas para fiesta y más. Enviamos a toda la república mexicana.",
+    "Productos personalizados hechos a mano: vasos, playeras, llaveros, etiquetas para fiesta y más. Enviamos a toda la república mexicana.",
 };
 
 const faqSchema = {

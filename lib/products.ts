@@ -13,6 +13,7 @@ export interface CustomizationField {
   label: string;
   type: "text" | "select" | "color" | "pattern";
   required: boolean;
+  multiline?: boolean;
   maxLength?: number;
   placeholder?: string;
   options?: string[];
@@ -50,24 +51,18 @@ export const products: Product[] = [
         label: "Tipo de vaso",
         type: "select",
         required: true,
-        options: ["Vaso de acero (20 oz)", "Vaso de vidrio", "Mug cerámica", "Tumbler con popote"],
+        options: ["Vaso tipo lata", "Vaso de vidrio", "Vaso cold cup", "Vaso Mason", "Mug cerámica"],
       },
       {
         id: "texto",
         label: "¿Qué quieres que diga el vaso?",
         type: "text",
+        multiline: true,
         required: true,
-        maxLength: 30,
-        placeholder: "Ej: Ana, o 'Café antes que tú'",
+        maxLength: 60,
+        placeholder: "Ej: Lilo\no 'Café antes que tú'\n(Enter para nueva línea)",
       },
-      {
-        id: "patron",
-        label: "Estilo del diseño",
-        type: "pattern",
-        required: true,
-        options: ["Limpio", "Con marco", "Con laurel", "Con flores", "Con doble línea"],
-      },
-      {
+{
         id: "color-vinilo",
         label: "Color del vinilo",
         type: "select",
@@ -122,9 +117,9 @@ export const products: Product[] = [
     name: "Llavero Personalizado",
     shortDescription: "Un detalle chiquito que dice mucho.",
     description:
-      "Llavero de acrílico cortado con Cricut con tu nombre, iniciales o forma especial. Acabado pulido y elegante.",
+      "Llavero de acrílico con tu nombre, iniciales o forma especial. Acabado pulido y elegante.",
     seoDescription:
-      "Llavero personalizado de acrílico con tu nombre o iniciales. El recuerdo perfecto para XV años, bodas y graduaciones. Hecho a mano con Cricut, acabado elegante y duradero.",
+      "Llavero personalizado de acrílico con tu nombre o iniciales. El recuerdo perfecto para XV años, bodas y graduaciones. Hecho a mano, acabado elegante y duradero.",
     basePrice: 90,
     category: "llaveros",
     customizationFields: [
@@ -134,7 +129,7 @@ export const products: Product[] = [
         type: "text",
         required: true,
         maxLength: 20,
-        placeholder: "Ej: Ana G. o Mamá",
+        placeholder: "Ej: Vale G. o Mamá",
       },
       {
         id: "color-acrilico",
@@ -335,7 +330,7 @@ export const products: Product[] = [
         type: "text",
         required: true,
         maxLength: 40,
-        placeholder: "Ej: Alessia, o Ana & Carlos",
+        placeholder: "Ej: Alessia, o Ale & Carlos",
       },
       {
         id: "fecha",
@@ -403,7 +398,7 @@ export const products: Product[] = [
     description:
       "Vinilo de corte aplicado sobre mampara para eventos: baby showers, bodas, XV años, graduaciones. El texto, nombre o frase que quieras en el estilo de tu evento. La mampara se cotiza aparte — puedes traer la tuya, comprarla o consultarnos opciones de renta de mobiliario.",
     seoDescription:
-      "Mampara personalizada con vinilo de corte para bodas, baby shower, XV años y graduaciones. El backdrop que se roba el evento con tu texto y estilo. Hecho a mano con Cricut en México.",
+      "Mampara personalizada con vinilo de corte para bodas, baby shower, XV años y graduaciones. El backdrop que se roba el evento con tu texto y estilo. Hecho a mano en México.",
     basePrice: 450,
     category: "eventos",
     customizationFields: [
@@ -446,7 +441,7 @@ export const products: Product[] = [
     description:
       "Lámina de acrílico con texto en vinilo de corte. Perfecto para bodas, XV años, baby showers y cualquier evento que merezca un letrero bonito. Se ve en todas las fotos.",
     seoDescription:
-      "Letrero de acrílico personalizado con vinilo de corte para bodas, XV años, baby shower y eventos. El backdrop perfecto para fotos. Hecho a mano con Cricut, enviamos a toda la república mexicana.",
+      "Letrero de acrílico personalizado con vinilo de corte para bodas, XV años, baby shower y eventos. El backdrop perfecto para fotos. Hecho a mano, enviamos a toda la república mexicana.",
     basePrice: 320,
     category: "eventos",
     customizationFields: [

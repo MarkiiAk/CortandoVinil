@@ -40,7 +40,7 @@ export default function ShopPage() {
     "@type": "ItemList",
     name: "Catálogo de Productos Personalizados — Casa Alessia",
     description:
-      "Colección completa de productos personalizados hechos a mano con Cricut.",
+      "Colección completa de productos personalizados hechos a mano.",
     numberOfItems: products.length,
     itemListElement: products.map((p, i) => ({
       "@type": "ListItem",
