@@ -239,13 +239,13 @@ export function ProductPreview({ product, values }: Props) {
   const colorName = values["color-vinilo"] ?? "Negro";
   const patron    = values["patron"] ?? "Limpio";
   const tipoVaso  = values["tipo-vaso"] ?? "default";
-  const isVaso    = product.category === "vasos";
+  const isVaso    = false; // vasos category removed in Cortando Vinil rebrand
 
   if (!isVaso) {
     return (
-      <div className="w-full aspect-square bg-arena flex flex-col items-center justify-center gap-3 text-cafe/30">
-        <span className="font-cormorant text-6xl font-light italic">{text || product.name[0]}</span>
-        <span className="font-dm text-xs tracking-widest uppercase">Vista previa no disponible</span>
+      <div className="w-full aspect-square bg-lienzo-dark flex flex-col items-center justify-center gap-3 text-tinta/20">
+        <span className="font-archivo text-6xl text-oscuro/20">{text || product.name[0]}</span>
+        <span className="font-figtree text-xs tracking-widest uppercase text-pizarra/40">Vista previa no disponible</span>
       </div>
     );
   }
@@ -448,7 +448,7 @@ export function ProductPreview({ product, values }: Props) {
           </g>
         </svg>
 
-        <p className="absolute bottom-3 left-0 right-0 text-center font-dm text-[10px] text-humo/70 tracking-wide">
+        <p className="absolute bottom-3 left-0 right-0 text-center font-figtree text-[10px] text-pizarra/60 tracking-wide">
           Siempre te contactamos antes de producir para validar tu diseño
         </p>
       </div>
@@ -456,7 +456,7 @@ export function ProductPreview({ product, values }: Props) {
   }
 
   return (
-    <div className="w-full aspect-square bg-arena flex items-center justify-center overflow-hidden rounded-sm relative">
+    <div className="w-full aspect-square bg-lienzo-dark flex items-center justify-center overflow-hidden rounded-sm relative">
       <svg viewBox="0 0 260 340" width="100%" height="100%" className="max-w-[280px]">
         <defs>
           <linearGradient id="steelGrad" x1="0" y1="0" x2="1" y2="0">
@@ -680,7 +680,7 @@ export function ProductPreview({ product, values }: Props) {
         </g>
       </svg>
 
-      <p className="absolute bottom-3 left-0 right-0 text-center font-dm text-[10px] text-humo/70 tracking-wide">
+      <p className="absolute bottom-3 left-0 right-0 text-center font-figtree text-[10px] text-pizarra/60 tracking-wide">
         Siempre te contactamos antes de producir para validar tu diseño
       </p>
     </div>

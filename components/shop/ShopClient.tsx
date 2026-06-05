@@ -12,36 +12,31 @@ type FilterValue = ProductCategory | "all";
 
 const categories: { label: string; value: FilterValue }[] = [
   { label: "Todo", value: "all" },
-  { label: "Vasos", value: "vasos" },
-  { label: "Ropa", value: "ropa" },
-  { label: "Llaveros", value: "llaveros" },
-  { label: "Fiestas", value: "fiestas" },
-  { label: "Velas", value: "velas" },
-  { label: "Packaging", value: "packaging" },
+  { label: "Sublimado", value: "sublimado" },
+  { label: "Corte Láser", value: "laser" },
+  { label: "Gran Formato", value: "granformato" },
+  { label: "Impresos", value: "impresos" },
+  { label: "Vinil Textil", value: "viniltextil" },
 ];
 
 export function ShopClient() {
   const [active, setActive] = useState<FilterValue>("all");
 
-  const catalogProducts = products.filter(
-    (p) => p.category !== "eventos"
-  );
-
   const filtered =
     active === "all"
-      ? catalogProducts
-      : catalogProducts.filter((p) => p.category === active);
+      ? products
+      : products.filter((p) => p.category === active);
 
   return (
-    <main className="min-h-screen bg-crema">
+    <main className="min-h-screen bg-lienzo">
       {/* Page header */}
-      <div className="pt-28 pb-12 px-6 md:px-10 border-b border-cafe/10">
+      <div className="pt-28 pb-12 px-6 md:px-10 border-b border-oscuro/8">
         <div className="max-w-7xl mx-auto">
-          <span className="font-dm text-xs tracking-[0.2em] uppercase text-humo block mb-3">
+          <span className="font-figtree text-xs tracking-[0.2em] uppercase text-pizarra block mb-3">
             Catálogo
           </span>
-          <h1 className="font-cormorant text-5xl md:text-6xl text-carbon">
-            Tienda
+          <h1 className="font-archivo text-5xl md:text-6xl text-oscuro">
+            Servicios
           </h1>
         </div>
       </div>
@@ -50,7 +45,7 @@ export function ShopClient() {
         <div className="flex flex-col md:flex-row gap-12">
           {/* Sidebar — desktop */}
           <aside className="hidden md:block w-44 flex-shrink-0 pt-1">
-            <p className="font-dm text-xs tracking-[0.2em] uppercase text-humo mb-5">
+            <p className="font-figtree text-xs tracking-[0.2em] uppercase text-pizarra mb-5">
               Categoría
             </p>
             <ul className="space-y-1">
@@ -59,15 +54,15 @@ export function ShopClient() {
                   <button
                     onClick={() => setActive(cat.value)}
                     className={cn(
-                      "font-dm text-sm w-full text-left py-2 transition-colors duration-200",
+                      "font-figtree text-sm w-full text-left py-2 transition-colors duration-200",
                       active === cat.value
-                        ? "text-cafe"
-                        : "text-humo hover:text-carbon"
+                        ? "text-tinta font-medium"
+                        : "text-pizarra hover:text-oscuro"
                     )}
                   >
                     {cat.label}
                     {active === cat.value && (
-                      <span className="ml-2 text-cafe/40">—</span>
+                      <span className="ml-2 text-tinta/30">—</span>
                     )}
                   </button>
                 </li>
@@ -83,10 +78,10 @@ export function ShopClient() {
                   key={cat.value}
                   onClick={() => setActive(cat.value)}
                   className={cn(
-                    "font-dm text-xs px-4 py-2 border transition-all duration-200",
+                    "font-figtree text-xs px-4 py-2 border transition-all duration-200",
                     active === cat.value
-                      ? "bg-cafe text-crema border-cafe"
-                      : "text-cafe border-cafe/30 hover:border-cafe"
+                      ? "bg-tinta text-lienzo border-tinta"
+                      : "text-pizarra border-oscuro/20 hover:border-tinta/50"
                   )}
                 >
                   {cat.label}
@@ -95,9 +90,9 @@ export function ShopClient() {
             </div>
 
             {/* Count */}
-            <p className="font-dm text-xs text-humo mb-8">
+            <p className="font-figtree text-xs text-pizarra mb-8">
               {filtered.length}{" "}
-              {filtered.length === 1 ? "producto" : "productos"}
+              {filtered.length === 1 ? "servicio" : "servicios"}
             </p>
 
             {/* Grid */}
@@ -122,8 +117,8 @@ export function ShopClient() {
 
             {filtered.length === 0 && (
               <div className="py-24 text-center">
-                <p className="font-cormorant text-2xl text-humo italic">
-                  No hay productos en esta categoría aún.
+                <p className="font-archivo text-2xl text-pizarra/50">
+                  No hay servicios en esta categoría aún.
                 </p>
               </div>
             )}

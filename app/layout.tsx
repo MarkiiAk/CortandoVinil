@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Archivo_Black, Figtree } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const archivoBlack = Archivo_Black({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-cormorant",
+  weight: "400",
+  variable: "--font-archivo",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const figtree = Figtree({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
-  variable: "--font-dm",
+  variable: "--font-figtree",
   display: "swap",
 });
 
@@ -24,11 +24,11 @@ export const metadata: Metadata = {
         : "http://localhost:3000")
   ),
   title: {
-    template: "%s | Casa Alessia",
-    default: "Productos Personalizados | Casa Alessia",
+    template: "%s | Cortando Vinil",
+    default: "Impresión y Corte Profesional | Cortando Vinil",
   },
   description:
-    "Vasos, playeras, llaveros y más con tu nombre. Hecho a mano con precisión. Enviamos a todo México.",
+    "Sublimado, corte láser, gran formato, impresos y vinil textil. Más de 15 años produciendo para negocios, emprendedores y eventos en México.",
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${cormorant.variable} ${dmSans.variable} font-dm antialiased`}>
+      <body className={`${archivoBlack.variable} ${figtree.variable} font-figtree antialiased`}>
         {children}
       </body>
     </html>

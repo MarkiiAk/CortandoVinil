@@ -9,16 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        arena: { DEFAULT: "#F5F0E8", dark: "#EAE3D2" },
-        crema: { DEFAULT: "#FAF7F2", dark: "#F0EBE1" },
-        cafe: { DEFAULT: "#6B4C35", dark: "#4A3224" },
-        "cafe-claro": { DEFAULT: "#A07850", dark: "#7D5C38" },
-        carbon: { DEFAULT: "#1C1C1A", dark: "#0F0F0E" },
-        humo: { DEFAULT: "#9E9A93", dark: "#6E6B65" },
+        // Cortando Vinil palette
+        tinta: { DEFAULT: "#1118C2", dark: "#0C1399" },       // electric blue — brand primary / hero
+        fuego: { DEFAULT: "#FF5A1A", dark: "#E04A0F" },        // vivid orange — CTAs / accent
+        lienzo: { DEFAULT: "#F7F7F5", dark: "#EAEAE8" },       // warm white — body backgrounds
+        oscuro: { DEFAULT: "#0C0E1E", light: "#2A2C3D" },      // near-black — primary text
+        pizarra: { DEFAULT: "#545572", light: "#8A8BA6" },     // slate — secondary text / dividers
       },
       fontFamily: {
-        cormorant: ["var(--font-cormorant)", "Georgia", "serif"],
-        dm: ["var(--font-dm)", "system-ui", "sans-serif"],
+        archivo: ["var(--font-archivo)", "Arial Black", "sans-serif"],
+        figtree: ["var(--font-figtree)", "system-ui", "sans-serif"],
       },
     },
   },

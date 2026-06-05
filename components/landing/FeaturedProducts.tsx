@@ -9,7 +9,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export function FeaturedProducts() {
   return (
-    <section id="productos" className="bg-arena py-24 px-6 md:px-10">
+    <section id="servicios" className="bg-lienzo-dark py-24 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -19,16 +19,16 @@ export function FeaturedProducts() {
           className="mb-14 flex items-end justify-between"
         >
           <div>
-            <span className="font-dm text-xs tracking-[0.2em] uppercase text-humo block mb-3">
-              Catálogo
+            <span className="font-figtree text-xs tracking-[0.2em] uppercase text-pizarra block mb-3">
+              Catálogo completo
             </span>
-            <h2 className="font-cormorant text-4xl md:text-5xl text-carbon">
-              Lo que hacemos
+            <h2 className="font-archivo text-4xl md:text-5xl text-oscuro">
+              Nuestros servicios
             </h2>
           </div>
           <Link
             href="/shop"
-            className="hidden md:inline-block font-dm text-sm text-cafe border-b border-cafe/30 hover:border-cafe pb-0.5 transition-all duration-200"
+            className="hidden md:inline-block font-figtree text-sm text-tinta border-b border-tinta/30 hover:border-tinta pb-0.5 transition-all duration-200"
           >
             Ver todo →
           </Link>
@@ -41,7 +41,7 @@ export function FeaturedProducts() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, delay: i * 0.08, ease }}
+              transition={{ duration: 0.6, delay: i * 0.06, ease }}
             >
               <ProductCard product={product} />
             </motion.div>
@@ -57,9 +57,9 @@ export function FeaturedProducts() {
         >
           <Link
             href="/shop"
-            className="font-dm text-sm text-cafe border-b border-cafe/30 hover:border-cafe pb-0.5 transition-all duration-200"
+            className="font-figtree text-sm text-tinta border-b border-tinta/30 hover:border-tinta pb-0.5 transition-all duration-200"
           >
-            Ver todo el catálogo →
+            Ver todos los servicios →
           </Link>
         </motion.div>
       </div>

@@ -10,66 +10,60 @@ import { ShopCTA } from "@/components/landing/ShopCTA";
 import { Footer } from "@/components/landing/Footer";
 
 export const metadata: Metadata = {
-  title: "Productos Personalizados con tu Nombre",
+  title: "Impresión y Corte Profesional en México",
   description:
-    "Vasos, playeras, llaveros y más con tu nombre o frase favorita. Hecho a mano con precisión. Enviamos a toda la república mexicana.",
+    "Sublimado, corte láser, gran formato, impresos y vinil textil. Más de 15 años produciendo para negocios, emprendedores y eventos. Enviamos a toda la república mexicana.",
   keywords: [
-    "productos personalizados",
-    "vasos personalizados",
-    "playeras personalizadas",
-    "regalos personalizados México",
-    "llaveros personalizados",
-    "etiquetas personalizadas para fiesta",
-    "cajitas de regalo personalizadas",
+    "impresión personalizada México",
+    "sublimado tazas termos",
+    "corte láser acrílico madera",
+    "lonas publicitarias",
+    "vinil textil playeras",
+    "merch corporativo",
+    "impresión gran formato",
+    "roll up display",
+    "tarjetas de presentación",
   ],
   openGraph: {
-    title: "Productos Personalizados con tu Nombre | Casa Alessia",
+    title: "Impresión y Corte Profesional | Cortando Vinil",
     description:
-      "Tu nombre, tu estilo. Vasos, playeras, llaveros y más. Enviamos a todo México.",
+      "Sublimado, corte láser, gran formato, impresos y vinil textil. Más de 15 años produciendo para negocios y eventos en México.",
     type: "website",
     locale: "es_MX",
-    url: "https://mimarca.mx",
-    siteName: "Casa Alessia",
+    url: "https://cortandovinil.com",
+    siteName: "Cortando Vinil",
     images: [
       {
         url: "/logo.png",
-        alt: "Casa Alessia — Productos Personalizados",
+        alt: "Cortando Vinil — Impresión y Corte Profesional",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Productos Personalizados | Casa Alessia",
-    description: "Tu nombre, tu estilo. Enviamos a todo México.",
+    title: "Impresión y Corte Profesional | Cortando Vinil",
+    description: "Sublimado, corte láser, gran formato, impresos y vinil textil. Enviamos a todo México.",
     images: ["/logo.png"],
   },
   alternates: {
-    canonical: "https://mimarca.mx",
+    canonical: "https://cortandovinil.com",
   },
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Casa Alessia",
-  url: "https://mimarca.mx",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://mimarca.mx/shop?q={search_term_string}",
-    },
-    "query-input": "required name=search_term_string",
-  },
+  name: "Cortando Vinil",
+  url: "https://cortandovinil.com",
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Casa Alessia",
-  url: "https://mimarca.mx",
+  name: "Cortando Vinil",
+  url: "https://cortandovinil.com",
   description:
-    "Productos personalizados hechos a mano: vasos, playeras, llaveros, etiquetas para fiesta y más. Enviamos a toda la república mexicana.",
+    "Empresa de impresión y corte profesional con más de 15 años de experiencia. Sublimado, corte láser, gran formato, impresos y vinil textil. Enviamos a toda la república mexicana.",
 };
 
 const faqSchema = {
@@ -78,10 +72,18 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "¿Cuánto tiempo tarda en llegar mi pedido?",
+      name: "¿Cuánto tarda la cotización?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los pedidos se procesan en 3 a 5 días hábiles. El envío tarda entre 3 y 7 días adicionales dependiendo de tu ubicación en la república mexicana.",
+        text: "Respondemos cotizaciones en menos de 24 horas hábiles. Para pedidos urgentes, contáctanos directamente por WhatsApp.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Hacen pedidos desde 1 pieza?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sí, la mayoría de nuestros servicios están disponibles desde 1 pieza. Algunos productos tienen mínimos por proceso técnico — te lo indicamos al cotizar.",
       },
     },
     {
@@ -89,31 +91,15 @@ const faqSchema = {
       name: "¿Envían a toda la república mexicana?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí, hacemos envíos a toda la república mexicana a través de paquetería.",
+        text: "Sí, enviamos a toda la república mexicana por paquetería. El costo de envío se incluye en la cotización.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Puedo poner cualquier texto o nombre?",
+      name: "¿Necesito mandar el diseño listo?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí, cada producto es personalizado con el texto, nombre o frase que tú elijas, dentro del límite de caracteres de cada artículo.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Qué pasa si mi pedido llega dañado?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Si tu pedido llega con algún daño, contáctanos dentro de las 48 horas siguientes a la entrega con fotos y lo resolvemos de inmediato.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Hacen pedidos al mayoreo para eventos?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sí, atendemos pedidos al mayoreo para bodas, baby shower, XV años, graduaciones y eventos corporativos. Contáctanos para recibir una cotización especial.",
+        text: "Si tienes el archivo listo (AI, PDF, PNG en alta resolución) es ideal. Si no, nuestro equipo puede apoyarte con el diseño — cotiza también ese servicio.",
       },
     },
   ],

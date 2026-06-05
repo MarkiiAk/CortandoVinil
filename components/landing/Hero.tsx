@@ -1,43 +1,40 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import { products } from "@/lib/products";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const words = ["nombre", "estilo", "esencia", "historia", "gusto", "momento", "festejo", "imagen"];
+const WHATSAPP_NUMBER = "5212296499981";
+const WA_MSG = "Hola 👋 quiero cotizar un proyecto con Cortando Vinil.";
+
+const servicios = [
+  { num: "01", name: "Sublimado" },
+  { num: "02", name: "Corte Láser" },
+  { num: "03", name: "Gran Formato" },
+  { num: "04", name: "Impresos" },
+  { num: "05", name: "Vinil Textil" },
+];
 
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
+  show: { transition: { staggerChildren: 0.1 } },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 28 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
 };
 
 export function Hero() {
-  const heroProducts = products.slice(0, 4);
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((i) => (i + 1) % words.length);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section
       id="inicio"
-      className="min-h-screen bg-crema pt-28 pb-20 px-6 md:px-10 flex items-center"
+      className="min-h-screen bg-tinta pt-20 pb-16 px-6 md:px-10 flex items-center"
     >
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
-        {/* Left column */}
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-16 lg:gap-20 items-center">
+
+        {/* Left — brand statement */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -45,113 +42,80 @@ export function Hero() {
           className="space-y-8"
         >
           <motion.div variants={item}>
-            <span className="font-dm text-xs tracking-[0.2em] uppercase text-humo">
-              Hecho a mano · Enviamos a todo México
+            <span className="font-figtree text-xs tracking-[0.25em] uppercase text-lienzo/40">
+              Más de 15 años de experiencia · Enviamos a todo México
             </span>
           </motion.div>
 
           <motion.h1
             variants={item}
-            className="font-cormorant italic text-[clamp(3rem,7vw,5rem)] text-carbon leading-[1.05]"
+            className="font-archivo text-[clamp(3rem,8vw,6rem)] leading-[0.92] text-lienzo"
           >
-            Hecho para ti,
+            Lo que
             <br />
-            <span>con tu </span>
-            <span className="relative inline-block">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={words[index]}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.35, ease }}
-                  className="inline-block text-cafe"
-                >
-                  {words[index]}
-                </motion.span>
-              </AnimatePresence>
-            </span>
-            .
+            diseñas,
+            <br />
+            <span className="text-fuego">lo hacemos</span>
+            <br />
+            real.
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="font-dm text-base text-humo leading-relaxed max-w-md"
+            className="font-figtree text-base text-lienzo/60 leading-relaxed max-w-md"
           >
-            Vasos, playeras, llaveros y mil cosas más, con tu nombre o tu frase
-            favorita. Tú lo imaginas, nosotros lo hacemos y te llega hasta la puerta.
+            Sublimado, corte láser, gran formato, impresos y vinil textil.
+            Producimos para negocios, emprendedores y eventos en toda la república.
           </motion.p>
 
           <motion.div
             variants={item}
-            className="flex items-center gap-5 flex-wrap"
+            className="flex items-center gap-4 flex-wrap"
           >
             <Link
               href="/shop"
-              className="font-dm text-sm bg-cafe text-crema px-7 py-3.5 hover:bg-cafe-dark transition-all duration-200"
+              className="font-archivo text-sm bg-lienzo text-tinta px-7 py-3.5 hover:bg-lienzo/90 transition-all duration-200"
             >
-              Ver lo que hacemos
+              Ver servicios →
             </Link>
             <a
-              href="#como-funciona"
-              className="font-dm text-sm text-cafe border-b border-cafe/30 hover:border-cafe transition-all duration-200 pb-0.5"
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WA_MSG)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-archivo text-sm bg-fuego text-lienzo px-7 py-3.5 hover:bg-fuego-dark transition-all duration-200"
             >
-              ¿Cómo funciona? →
+              Cotizar por WhatsApp
             </a>
           </motion.div>
         </motion.div>
 
-        {/* Right column — 2×2 product placeholders */}
+        {/* Right — service category list */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3, ease }}
-          className="grid grid-cols-2 gap-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4, ease }}
+          className="hidden lg:block"
         >
-          {heroProducts.map((product, i) => (
-            <motion.div
-              key={product.id}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45 + i * 0.1, ease }}
-            >
-              <Link
-                href={`/shop/${product.slug}`}
-                className="group relative aspect-square bg-arena rounded-lg overflow-hidden flex flex-col items-center justify-center hover:bg-arena-dark transition-colors duration-300"
+          <div className="border-t border-lienzo/15">
+            {servicios.map((s, i) => (
+              <motion.div
+                key={s.num}
+                initial={{ opacity: 0, x: 16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 + i * 0.08, ease }}
+                className="group flex items-center justify-between py-6 border-b border-lienzo/15 cursor-default"
               >
-                {product.images[0] ? (
-                  <>
-                    <Image
-                      src={product.images[0]}
-                      alt={product.name}
-                      fill
-                      className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
-                      sizes="(max-width: 1024px) 50vw, 25vw"
-                    />
-                    {/* Gradient label — siempre visible */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-cafe/75 to-transparent pt-10 pb-4 px-4">
-                      <span className="font-cormorant italic text-lg text-crema leading-tight block">
-                        {product.name}
-                      </span>
-                      <span className="font-dm text-xs text-crema/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        Hazlo tuyo →
-                      </span>
-                    </div>
-                  </>
-                ) : (
-                  <div className="w-full h-full flex flex-col items-center justify-center p-5">
-                    <span className="font-cormorant text-base md:text-lg italic text-cafe/45 text-center group-hover:text-cafe/70 transition-colors duration-300 leading-tight">
-                      {product.name}
-                    </span>
-                    <span className="font-dm text-xs text-humo mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      Hazlo tuyo →
-                    </span>
-                  </div>
-                )}
-              </Link>
-            </motion.div>
-          ))}
+                <span className="font-archivo text-[clamp(1.5rem,2.8vw,2.2rem)] text-lienzo/90 group-hover:text-lienzo transition-colors duration-200">
+                  {s.name}
+                </span>
+                <span className="font-figtree text-sm text-lienzo/30 group-hover:text-fuego transition-colors duration-200 tabular-nums">
+                  {s.num}
+                </span>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
+
       </div>
     </section>
   );

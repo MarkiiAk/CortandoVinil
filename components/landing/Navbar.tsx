@@ -9,10 +9,13 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { label: "Inicio", href: "/#inicio" },
-  { label: "Productos", href: "/#productos" },
+  { label: "Servicios", href: "/#servicios" },
   { label: "Cómo funciona", href: "/#como-funciona" },
   { label: "Contacto", href: "/#contacto" },
 ];
+
+const WHATSAPP_NUMBER = "5212296499981";
+const WA_MSG = "Hola 👋 quiero cotizar un proyecto con Cortando Vinil.";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,7 +33,7 @@ export function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           scrolled
-            ? "bg-crema/90 backdrop-blur-sm border-b border-cafe/10"
+            ? "bg-lienzo/95 backdrop-blur-sm border-b border-oscuro/8"
             : "bg-transparent"
         )}
       >
@@ -39,11 +42,14 @@ export function Navbar() {
           <Link href="/" className="flex items-center">
             <Image
               src="/logo.png"
-              alt="Casa Alessia"
+              alt="Cortando Vinil"
               width={300}
               height={100}
               style={{ width: "130px", height: "auto" }}
-              className="object-contain"
+              className={cn(
+                "object-contain transition-all duration-300",
+                scrolled ? "" : "brightness-0 invert"
+              )}
               priority
             />
           </Link>
@@ -54,7 +60,12 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="font-dm text-sm text-carbon/60 hover:text-cafe transition-colors duration-200"
+                className={cn(
+                  "font-figtree text-sm font-medium transition-colors duration-200",
+                  scrolled
+                    ? "text-oscuro/60 hover:text-tinta"
+                    : "text-lienzo/70 hover:text-lienzo"
+                )}
               >
                 {link.label}
               </a>
@@ -63,17 +74,27 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Link
-              href="/shop"
-              className="font-dm text-sm border border-cafe text-cafe px-5 py-2.5 hover:bg-cafe hover:text-crema transition-all duration-200"
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WA_MSG)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "font-archivo text-sm px-5 py-2.5 transition-all duration-200",
+                scrolled
+                  ? "bg-fuego text-lienzo hover:bg-fuego-dark"
+                  : "bg-lienzo text-tinta hover:bg-lienzo/90"
+              )}
             >
-              Quiero el mío
-            </Link>
+              Cotizar ahora
+            </a>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-cafe p-1"
+            className={cn(
+              "md:hidden p-1 transition-colors duration-200",
+              scrolled ? "text-oscuro" : "text-lienzo"
+            )}
             onClick={() => setOpen(!open)}
             aria-label="Menú"
           >
@@ -90,25 +111,27 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed top-16 left-0 right-0 z-40 bg-crema border-b border-cafe/10 px-6 py-6 flex flex-col gap-5 md:hidden"
+            className="fixed top-20 left-0 right-0 z-40 bg-lienzo border-b border-oscuro/8 px-6 py-6 flex flex-col gap-5 md:hidden"
           >
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="font-dm text-base text-carbon/60 hover:text-cafe transition-colors duration-200"
+                className="font-figtree text-base text-oscuro/60 hover:text-tinta transition-colors duration-200"
               >
                 {link.label}
               </a>
             ))}
-            <Link
-              href="/shop"
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WA_MSG)}`}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="font-dm text-sm border border-cafe text-cafe px-5 py-3 text-center hover:bg-cafe hover:text-crema transition-all duration-200"
+              className="font-archivo text-sm bg-fuego text-lienzo px-5 py-3 text-center hover:bg-fuego-dark transition-all duration-200"
             >
-              Quiero el mío
-            </Link>
+              Cotizar ahora
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

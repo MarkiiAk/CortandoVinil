@@ -7,23 +7,23 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const steps = [
   {
     number: "1",
-    title: "Escoge tu favorito",
-    description: "Date una vuelta por el catálogo y quédate con el que más te lata.",
+    title: "Cuéntanos qué necesitas",
+    description: "Material, cantidad, tamaño, diseño y para cuándo. Entre más detalle, más rápido te cotizamos.",
   },
   {
     number: "2",
-    title: "Ponle tu toque",
-    description: "Dinos qué nombre, frase o diseño quieres. Aquí es donde se vuelve tuyo.",
+    title: "Recibes la cotización",
+    description: "En menos de 24 horas tienes precio, tiempo de entrega y cualquier pregunta respondida.",
   },
   {
     number: "3",
-    title: "Paga seguro",
-    description: "Checkout con MercadoPago, rápido y sin enredos.",
+    title: "Producción supervisada",
+    description: "Aprobás y entramos a producción. Revisamos en cada etapa para que salga exacto.",
   },
   {
     number: "4",
-    title: "Recíbelo en casa",
-    description: "Lo empacamos con cariño y te lo mandamos a donde estés en México.",
+    title: "Llega a tu puerta",
+    description: "Empacado seguro con número de rastreo incluido. A donde estés en la república.",
   },
 ];
 
@@ -31,7 +31,7 @@ export function HowItWorks() {
   return (
     <section
       id="como-funciona"
-      className="bg-crema py-24 px-6 md:px-10 border-t border-cafe/10"
+      className="bg-lienzo-dark py-24 px-6 md:px-10 border-t border-oscuro/8"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -39,19 +39,21 @@ export function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <span className="font-dm text-xs tracking-[0.2em] uppercase text-humo block mb-3">
+          <span className="font-figtree text-xs tracking-[0.2em] uppercase text-pizarra block mb-3">
             Proceso
           </span>
-          <h2 className="font-cormorant text-4xl md:text-5xl text-carbon">
-            Pedir cualquier cosa es facilísimo
+          <h2 className="font-archivo text-4xl md:text-5xl text-oscuro">
+            De la idea al producto,
+            <br />
+            sin complicaciones.
           </h2>
         </motion.div>
 
         {/* Desktop: horizontal */}
         <div className="hidden md:grid md:grid-cols-4 gap-0 relative">
-          <div className="absolute top-10 left-[12.5%] right-[12.5%] h-px bg-cafe/15" />
+          <div className="absolute top-9 left-[12.5%] right-[12.5%] h-px bg-tinta/15" />
 
           {steps.map((step, i) => (
             <motion.div
@@ -62,15 +64,15 @@ export function HowItWorks() {
               transition={{ duration: 0.6, delay: i * 0.12, ease }}
               className="flex flex-col items-center text-center px-6"
             >
-              <div className="w-20 h-20 rounded-full bg-arena border border-cafe/15 flex items-center justify-center mb-6 relative z-10">
-                <span className="font-cormorant text-3xl italic text-cafe">
+              <div className="w-[72px] h-[72px] bg-tinta flex items-center justify-center mb-6 relative z-10">
+                <span className="font-archivo text-2xl text-lienzo">
                   {step.number}
                 </span>
               </div>
-              <h3 className="font-cormorant text-xl text-carbon mb-2">
+              <h3 className="font-archivo text-lg text-oscuro mb-2">
                 {step.title}
               </h3>
-              <p className="font-dm text-sm text-humo leading-relaxed">
+              <p className="font-figtree text-sm text-pizarra leading-relaxed">
                 {step.description}
               </p>
             </motion.div>
@@ -79,7 +81,7 @@ export function HowItWorks() {
 
         {/* Mobile: vertical */}
         <div className="md:hidden relative">
-          <div className="absolute left-8 top-8 bottom-8 w-px bg-cafe/15" />
+          <div className="absolute left-8 top-8 bottom-8 w-px bg-tinta/20" />
 
           {steps.map((step, i) => (
             <motion.div
@@ -90,16 +92,16 @@ export function HowItWorks() {
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
               className="flex items-start gap-6 pb-10 last:pb-0"
             >
-              <div className="w-16 h-16 rounded-full bg-arena border border-cafe/15 flex items-center justify-center flex-shrink-0 relative z-10">
-                <span className="font-cormorant text-2xl italic text-cafe">
+              <div className="w-16 h-16 bg-tinta flex items-center justify-center flex-shrink-0 relative z-10">
+                <span className="font-archivo text-xl text-lienzo">
                   {step.number}
                 </span>
               </div>
               <div className="pt-3">
-                <h3 className="font-cormorant text-xl text-carbon mb-1">
+                <h3 className="font-archivo text-lg text-oscuro mb-1">
                   {step.title}
                 </h3>
-                <p className="font-dm text-sm text-humo leading-relaxed">
+                <p className="font-figtree text-sm text-pizarra leading-relaxed">
                   {step.description}
                 </p>
               </div>

@@ -7,39 +7,39 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const props = [
   {
     number: "01",
-    title: "Tú mandas en el diseño",
+    title: "Cualquier material",
     description:
-      "El nombre, la frase, el color, el detalle. Tú decides cómo se ve y nosotros nos encargamos de que quede exacto a lo que tienes en la cabeza.",
+      "Madera, acrílico, cerámica, tela, metal, papel. Si tiene superficie, lo podemos personalizar. Si no lo tenemos, lo conseguimos.",
   },
   {
     number: "02",
-    title: "Llega a donde estés",
+    title: "Entregas a toda la república",
     description:
-      "De Tijuana a Mérida. Empacamos cada pedido con cuidado y te pasamos el seguimiento para que sepas dónde viene tu paquete en todo momento.",
+      "Empacamos cada pedido para que llegue intacto y te mandamos el número de rastreo el mismo día que sale del taller.",
   },
   {
     number: "03",
-    title: "Bonito de verdad, sin sustos",
+    title: "Calidad sin sorpresas",
     description:
-      "Cuidamos cada detalle para que lo que recibes se vea igual de bonito que como lo imaginaste. Sin defectos, sin dramas.",
+      "15 años haciendo esto. Supervisamos producción en cada etapa para que lo que recibes sea exactamente lo que pediste.",
   },
 ];
 
 export function ValueProps() {
   return (
-    <section className="bg-crema py-24 px-6 md:px-10 border-t border-cafe/10">
+    <section className="bg-lienzo py-24 px-6 md:px-10 border-t border-oscuro/8">
       <div className="max-w-7xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease }}
-          className="font-cormorant text-4xl md:text-5xl text-carbon text-center mb-16"
+          className="font-archivo text-3xl md:text-4xl text-oscuro mb-16"
         >
-          Por qué te va a encantar pedirnos
+          Por qué producir con nosotros
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-cafe/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-oscuro/10">
           {props.map((prop, i) => (
             <motion.div
               key={prop.number}
@@ -49,13 +49,13 @@ export function ValueProps() {
               transition={{ duration: 0.6, delay: i * 0.1, ease }}
               className="px-8 py-10 md:first:pl-0 md:last:pr-0 space-y-4"
             >
-              <span className="font-cormorant text-7xl text-cafe/20 block leading-none">
+              <span className="font-archivo text-5xl text-tinta/15 block leading-none tabular-nums">
                 {prop.number}
               </span>
-              <h3 className="font-cormorant text-2xl text-carbon">
+              <h3 className="font-archivo text-xl text-oscuro">
                 {prop.title}
               </h3>
-              <p className="font-dm text-sm text-humo leading-relaxed">
+              <p className="font-figtree text-sm text-pizarra leading-relaxed">
                 {prop.description}
               </p>
             </motion.div>

@@ -2,50 +2,51 @@
 
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import Link from "next/link";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const WHATSAPP_NUMBER = "5212296499981";
 
-const servicios = [
+const categorias = [
   {
-    id: "invitacion-digital",
-    name: "Invitación Digital",
+    id: "empresas",
+    name: "Para empresas",
     description:
-      "Link animado que se abre en el celular con el diseño de tu evento. Sin imagen borrosa de WhatsApp, sin imprimir nada.",
-    note: "Tenemos muestra — pídela por WhatsApp.",
-    price: "Precio por cotización",
+      "Merch corporativo, material de punto de venta, tarjetas, playeras con logo, gorras, termos y todo lo que necesita tu marca para verse profesional.",
+    note: "Manejamos pedidos grandes y recurrentes.",
     featured: true,
     waMessage:
-      "Hola 👋 me interesa una invitación digital para mi evento. ¿Me pueden compartir una muestra?",
+      "Hola 👋 me interesa producir merch o material corporativo para mi empresa. ¿Me pueden dar información?",
+    href: "/shop?cat=sublimado",
   },
   {
-    id: "mampara",
-    name: "Backdrop / Mampara",
+    id: "emprendedores",
+    name: "Para emprendedores",
     description:
-      "El panel que se roba todas las fotos. Texto de tu evento en vinilo de corte, en el estilo y colores que ya elegiste.",
-    note: "La mampara se cotiza aparte — trae la tuya o consultamos.",
-    price: "Precio por cotización",
+      "Desde 1 pieza. Arranca tu línea de productos sin necesidad de grandes volúmenes. Tazas, fundas, letreros, playeras y más con tu diseño.",
+    note: "Pedidos unitarios disponibles.",
     featured: false,
     waMessage:
-      "Hola 👋 me interesa un backdrop o mampara personalizada para mi evento. ¿Me dan más info?",
+      "Hola 👋 soy emprendedor y quiero producir mis primeros artículos personalizados. ¿Cómo funciona?",
+    href: "/shop",
   },
   {
-    id: "invitacion-fisica",
-    name: "Invitación Física",
+    id: "eventos",
+    name: "Para eventos",
     description:
-      "Papel premium con el mismo diseño de todo lo demás. Para quienes todavía merecen algo en las manos.",
-    note: "Mínimo 20 piezas. Se coordina con la digital.",
-    price: "Precio por cotización",
+      "Lonas, roll ups, vinil de corte, mamparas y señalética. Todo lo que necesita tu evento para verse producido y coordinado.",
+    note: "Entregas express disponibles.",
     featured: false,
     waMessage:
-      "Hola 👋 me interesan invitaciones físicas para mi evento. ¿Cuál es el proceso?",
+      "Hola 👋 necesito material para un evento próximo: lonas, señalética o vinil. ¿Me pueden cotizar?",
+    href: "/shop?cat=granformato",
   },
 ];
 
 export function EventosSection() {
   return (
-    <section className="bg-arena py-24 px-6 md:px-10 border-t border-cafe/10">
+    <section className="bg-lienzo py-24 px-6 md:px-10 border-t border-oscuro/8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,89 +55,70 @@ export function EventosSection() {
           transition={{ duration: 0.6, ease }}
           className="mb-14"
         >
-          <span className="font-dm text-xs tracking-[0.2em] uppercase text-humo block mb-3">
-            Para tu evento
+          <span className="font-figtree text-xs tracking-[0.2em] uppercase text-pizarra block mb-3">
+            ¿Para quién producimos?
           </span>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <h2 className="font-cormorant text-4xl md:text-5xl text-carbon leading-[1.1]">
-              Todo coordinado
+            <h2 className="font-archivo text-4xl md:text-5xl text-oscuro leading-[1.05]">
+              Producimos para
               <br />
-              para tu evento.
+              todo tipo de cliente.
             </h2>
-            <p className="font-dm text-sm text-humo max-w-sm leading-relaxed md:text-right">
-              Elegimos un diseño y lo llevamos a todo lo que ya hacemos:
-              vasos, llaveros, cajitas, etiquetas. Y le sumamos lo que solo
-              existe para tu día.
+            <p className="font-figtree text-sm text-pizarra max-w-sm leading-relaxed md:text-right">
+              Empresas, emprendedores, diseñadores, agencias y organizadores de eventos.
+              Si necesitas impresión o corte, tenemos la solución.
             </p>
           </div>
         </motion.div>
 
-        {/* Antetítulo de las cards */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-dm text-xs tracking-[0.2em] uppercase text-humo mb-5"
-        >
-          Solo para eventos
-        </motion.p>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {servicios.map((s, i) => (
+          {categorias.map((cat, i) => (
             <motion.div
-              key={s.id}
+              key={cat.id}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: i * 0.1, ease }}
               className={`
-                flex flex-col justify-between p-7 rounded-lg
-                ${s.featured ? "bg-cafe text-crema" : "bg-crema border border-cafe/10"}
+                flex flex-col justify-between p-7
+                ${cat.featured ? "bg-tinta text-lienzo" : "bg-lienzo-dark border border-oscuro/8"}
               `}
             >
               <div className="space-y-4">
                 <h3
-                  className={`font-cormorant text-3xl leading-tight ${
-                    s.featured ? "text-crema italic" : "text-carbon"
+                  className={`font-archivo text-2xl leading-tight ${
+                    cat.featured ? "text-lienzo" : "text-oscuro"
                   }`}
                 >
-                  {s.name}
+                  {cat.name}
                 </h3>
                 <p
-                  className={`font-dm text-sm leading-relaxed ${
-                    s.featured ? "text-crema/70" : "text-humo"
+                  className={`font-figtree text-sm leading-relaxed ${
+                    cat.featured ? "text-lienzo/65" : "text-pizarra"
                   }`}
                 >
-                  {s.description}
+                  {cat.description}
                 </p>
                 <p
-                  className={`font-dm text-xs ${
-                    s.featured ? "text-crema/40" : "text-humo/60"
+                  className={`font-figtree text-xs ${
+                    cat.featured ? "text-fuego" : "text-tinta/60"
                   }`}
                 >
-                  {s.note}
+                  {cat.note}
                 </p>
               </div>
 
-              <div className="mt-8 space-y-3">
-                <p
-                  className={`font-cormorant text-xl italic ${
-                    s.featured ? "text-crema/80" : "text-cafe-claro"
-                  }`}
-                >
-                  {s.price}
-                </p>
+              <div className="mt-8">
                 <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(s.waMessage)}`}
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(cat.waMessage)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`
-                    inline-flex items-center gap-2.5 font-dm text-sm px-5 py-3 transition-all duration-200 w-full justify-center
+                    inline-flex items-center gap-2.5 font-figtree font-medium text-sm px-5 py-3 transition-all duration-200 w-full justify-center
                     ${
-                      s.featured
-                        ? "bg-crema text-cafe hover:bg-arena"
-                        : "bg-cafe text-crema hover:bg-cafe-dark"
+                      cat.featured
+                        ? "bg-fuego text-lienzo hover:bg-fuego-dark"
+                        : "bg-tinta text-lienzo hover:bg-tinta-dark"
                     }
                   `}
                 >
@@ -147,17 +129,6 @@ export function EventosSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Línea de cierre */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="font-dm text-sm text-humo text-center mt-10"
-        >
-          Y lo demás de tu fiesta — vasos, etiquetas, cajitas, velas — lo coordinamos con el mismo diseño.
-        </motion.p>
       </div>
     </section>
   );

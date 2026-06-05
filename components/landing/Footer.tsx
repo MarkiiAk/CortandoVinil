@@ -2,69 +2,79 @@ import Link from "next/link";
 import Image from "next/image";
 import { Instagram } from "lucide-react";
 
-const productLinks = [
-  { label: "Vasos personalizados", href: "/shop?cat=vasos" },
-  { label: "Playeras con texto", href: "/shop?cat=ropa" },
-  { label: "Llaveros", href: "/shop?cat=llaveros" },
-  { label: "Etiquetas para fiesta", href: "/shop?cat=fiestas" },
-  { label: "Cajitas de regalo", href: "/shop?cat=packaging" },
+const serviceLinks = [
+  { label: "Sublimado", href: "/shop?cat=sublimado" },
+  { label: "Corte Láser y CNC", href: "/shop?cat=laser" },
+  { label: "Gran Formato", href: "/shop?cat=granformato" },
+  { label: "Impresos", href: "/shop?cat=impresos" },
+  { label: "Vinil Textil", href: "/shop?cat=viniltextil" },
 ];
 
 const infoLinks = [
   { label: "Envíos", href: "/#envios" },
-  { label: "Devoluciones", href: "/#devoluciones" },
   { label: "Preguntas frecuentes", href: "/#faq" },
-  { label: "Contacto por WhatsApp", href: "/#contacto" },
+  { label: "Cotizar por WhatsApp", href: "/#contacto" },
+  { label: "Contacto", href: "/#contacto" },
 ];
+
+const WHATSAPP_NUMBER = "5212296499981";
 
 export function Footer() {
   return (
     <footer
       id="contacto"
-      className="bg-carbon text-crema/60 py-16 px-6 md:px-10"
+      className="bg-oscuro text-lienzo/50 py-16 px-6 md:px-10"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-crema/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-lienzo/8">
           {/* Brand */}
           <div className="space-y-4">
             <Image
               src="/logo.png"
-              alt="Casa Alessia"
+              alt="Cortando Vinil"
               width={300}
               height={110}
-              className="h-28 w-auto object-contain brightness-0 invert"
+              className="h-20 w-auto object-contain brightness-0 invert"
             />
-            <p className="font-cormorant italic text-lg text-crema/50">
-              Tu nombre, nuestra casa.
+            <p className="font-archivo text-lg text-lienzo/40">
+              Impresión y corte profesional.
             </p>
-            <p className="font-dm text-sm leading-relaxed max-w-xs">
-              Cosas bonitas hechas a mano, con tu nombre y a tu manera.
-              Te llegan a cualquier parte de México.
+            <p className="font-figtree text-sm leading-relaxed max-w-xs">
+              Sublimado, corte láser, gran formato, impresos y vinil textil.
+              Más de 15 años produciendo para México.
             </p>
             <div className="flex items-center gap-4 pt-1">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/cortandovinil"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-crema/30 hover:text-crema transition-colors duration-200"
+                className="text-lienzo/25 hover:text-lienzo transition-colors duration-200"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
               </a>
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-figtree text-xs text-lienzo/25 hover:text-lienzo transition-colors duration-200"
+              >
+                WhatsApp
+              </a>
             </div>
           </div>
 
-          {/* Products */}
+          {/* Services */}
           <div className="space-y-4">
-            <h4 className="font-dm text-xs tracking-[0.2em] uppercase text-crema/30">
-              Productos
+            <h4 className="font-figtree text-xs tracking-[0.2em] uppercase text-lienzo/25">
+              Servicios
             </h4>
             <ul className="space-y-2.5">
-              {productLinks.map((link) => (
+              {serviceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-dm text-sm hover:text-crema transition-colors duration-200"
+                    className="font-figtree text-sm hover:text-lienzo transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -75,7 +85,7 @@ export function Footer() {
 
           {/* Info */}
           <div className="space-y-4">
-            <h4 className="font-dm text-xs tracking-[0.2em] uppercase text-crema/30">
+            <h4 className="font-figtree text-xs tracking-[0.2em] uppercase text-lienzo/25">
               Información
             </h4>
             <ul className="space-y-2.5">
@@ -83,7 +93,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-dm text-sm hover:text-crema transition-colors duration-200"
+                    className="font-figtree text-sm hover:text-lienzo transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -94,10 +104,10 @@ export function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-dm text-xs text-crema/25">
-            © {new Date().getFullYear()} Casa Alessia. Todos los derechos reservados.
+          <p className="font-figtree text-xs text-lienzo/20">
+            © {new Date().getFullYear()} Cortando Vinil. Todos los derechos reservados.
           </p>
-          <p className="font-dm text-xs text-crema/25">
+          <p className="font-figtree text-xs text-lienzo/20">
             Hecho en México
           </p>
         </div>
