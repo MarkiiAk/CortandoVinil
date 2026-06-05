@@ -15,7 +15,7 @@ export function ServiceShopCard({ service }: Props) {
   return (
     <div className="group bg-carbon border border-zinc/30 hover:border-acento/60 transition-all duration-200 hover:-translate-y-0.5 flex flex-col">
       {/* Thumbnail */}
-      <Link href={`/servicios/${service.slug}`} className="block">
+      <Link href={`/tienda/${service.slug}`} className="block">
         <ServiceThumbnail slug={service.slug} className="aspect-[16/9]" />
       </Link>
 
@@ -26,7 +26,7 @@ export function ServiceShopCard({ service }: Props) {
             {service.techTag}
           </span>
           <h3 className="font-space font-semibold text-base text-blanco group-hover:text-acento transition-colors leading-tight">
-            <Link href={`/servicios/${service.slug}`}>{service.name}</Link>
+            <Link href={`/tienda/${service.slug}`}>{service.name}</Link>
           </h3>
           <p className="font-inter text-sm text-texto-muted mt-1 line-clamp-2 leading-relaxed">
             {service.tagline}
@@ -43,7 +43,7 @@ export function ServiceShopCard({ service }: Props) {
             Cotizar
           </a>
           <Link
-            href={`/servicios/${service.slug}`}
+            href={`/tienda/${service.slug}`}
             aria-label={`Ver detalles de ${service.name}`}
             className="w-10 h-10 border border-zinc/40 hover:border-acento flex items-center justify-center text-texto-muted hover:text-acento transition-colors shrink-0"
           >
