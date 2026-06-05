@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -110,15 +111,33 @@ export function Hero() {
             </div>
           </div>
           <div className="flex flex-col gap-3">
-            <div className="relative aspect-square bg-carbon-light flex items-end p-4">
-              <span className="font-space text-xs tracking-widest uppercase text-texto-muted border border-zinc/50 px-2 py-1">
-                Gran Formato
-              </span>
+            <div className="relative aspect-square bg-carbon-light overflow-hidden">
+              <Image
+                src="/servicios/hero-granformato.jpg"
+                alt="Gran Formato"
+                fill
+                className="object-cover"
+                sizes="25vw"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/70 to-transparent p-3">
+                <span className="font-space text-xs tracking-widest uppercase text-blanco/80 border border-blanco/30 px-2 py-1">
+                  Gran Formato
+                </span>
+              </div>
             </div>
-            <div className="relative aspect-video bg-zinc flex items-end p-4">
-              <span className="font-space text-xs tracking-widest uppercase text-texto-muted border border-zinc-light/50 px-2 py-1">
-                Láser CNC
-              </span>
+            <div className="relative aspect-video bg-zinc overflow-hidden">
+              <Image
+                src="/servicios/hero-laser.jpg"
+                alt="Láser CNC"
+                fill
+                className="object-cover"
+                sizes="25vw"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/70 to-transparent p-3">
+                <span className="font-space text-xs tracking-widest uppercase text-blanco/80 border border-blanco/30 px-2 py-1">
+                  Láser CNC
+                </span>
+              </div>
             </div>
           </div>
         </motion.div>
