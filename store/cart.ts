@@ -35,56 +35,35 @@ export const useCartStore = create<CartStore>()(
 
       addItem: (item) => {
         const existing = get().items.find(
-          (i) =>
-            i.productId === item.productId &&
-            i.customization === item.customization
+          (i) => i.productId === item.productId && i.customization === item.customization
         );
-
         if (existing) {
           set((state) => ({
             items: state.items.map((i) =>
-              i.id === existing.id
-                ? { ...i, quantity: i.quantity + item.quantity }
-                : i
+              i.id === existing.id ? { ...i, quantity: i.quantity + item.quantity } : i
             ),
           }));
         } else {
           set((state) => ({
-            items: [
-              ...state.items,
-              { ...item, id: `${item.productId}-${Date.now()}` },
-            ],
+            items: [...state.items, { ...item, id: `${item.productId}-${Date.now()}` }],
           }));
         }
       },
 
       removeItem: (id) =>
-        set((state) => ({
-          items: state.items.filter((i) => i.id !== id),
-        })),
+        set((state) => ({ items: state.items.filter((i) => i.id !== id) })),
 
       updateQuantity: (id, quantity) => {
-        if (quantity <= 0) {
-          get().removeItem(id);
-          return;
-        }
+        if (quantity <= 0) { get().removeItem(id); return; }
         set((state) => ({
-          items: state.items.map((i) =>
-            i.id === id ? { ...i, quantity } : i
-          ),
+          items: state.items.map((i) => i.id === id ? { ...i, quantity } : i),
         }));
       },
 
       clearCart: () => set({ items: [] }),
-
-      total: () =>
-        get().items.reduce((sum, item) => sum + item.price * item.quantity, 0),
-
-      count: () =>
-        get().items.reduce((sum, item) => sum + item.quantity, 0),
+      total: () => get().items.reduce((sum, item) => sum + item.price * item.quantity, 0),
+      count: () => get().items.reduce((sum, item) => sum + item.quantity, 0),
     }),
-    {
-      name: "casaalesssia-cart",
-    }
+    { name: "cortandovinil-quotes" }
   )
 );
