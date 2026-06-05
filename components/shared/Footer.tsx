@@ -15,7 +15,7 @@ const serviceLinks = [
 
 const companyLinks = [
   { label: "Inicio",     href: "/"           },
-  { label: "Servicios",  href: "/servicios"  },
+  { label: "Servicios",  href: "/tienda"  },
   { label: "Trabajos",   href: "/#trabajos"  },
   { label: "Contacto",   href: "/#contacto"  },
 ];

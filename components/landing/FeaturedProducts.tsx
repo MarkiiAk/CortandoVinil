@@ -27,7 +27,7 @@ export function FeaturedProducts() {
             </h2>
           </div>
           <Link
-            href="/shop"
+            href="/tienda"
             className="hidden md:inline-block font-figtree text-sm text-tinta border-b border-tinta/30 hover:border-tinta pb-0.5 transition-all duration-200"
           >
             Ver todo →
@@ -56,7 +56,7 @@ export function FeaturedProducts() {
           className="mt-12 text-center md:hidden"
         >
           <Link
-            href="/shop"
+            href="/tienda"
             className="font-figtree text-sm text-tinta border-b border-tinta/30 hover:border-tinta pb-0.5 transition-all duration-200"
           >
             Ver todos los servicios →

@@ -83,7 +83,7 @@ export function CartDrawer() {
                     Agrega servicios desde el catálogo
                   </p>
                   <Link
-                    href="/shop"
+                    href="/tienda"
                     onClick={closeCart}
                     className="font-archivo text-xs tracking-widest uppercase border border-tinta text-tinta px-6 py-3 hover:bg-tinta hover:text-lienzo transition-all duration-200 mt-2"
                   >

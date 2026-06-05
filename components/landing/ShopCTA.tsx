@@ -31,7 +31,7 @@ export function ShopCTA() {
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <Link
-              href="/shop"
+              href="/tienda"
               className="font-archivo text-sm bg-lienzo text-tinta px-8 py-4 hover:bg-lienzo/90 transition-all duration-200 whitespace-nowrap"
             >
               Ver catálogo completo

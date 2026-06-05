@@ -117,7 +117,7 @@ export function ProductDetail({ product, related }: Props) {
 
           {/* Back */}
           <Link
-            href="/shop"
+            href="/tienda"
             className="inline-flex items-center gap-1.5 font-figtree text-xs text-pizarra hover:text-tinta transition-colors duration-200 mb-10 group"
           >
             <ArrowLeft size={13} className="group-hover:-translate-x-0.5 transition-transform" />
@@ -410,7 +410,7 @@ export function ProductDetail({ product, related }: Props) {
                   También te puede interesar
                 </h2>
                 <Link
-                  href="/shop"
+                  href="/tienda"
                   className="hidden md:flex items-center gap-1 font-figtree text-xs text-pizarra hover:text-tinta transition-colors"
                 >
                   Ver todo <ChevronRight size={13} />

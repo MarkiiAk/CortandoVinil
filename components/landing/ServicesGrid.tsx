@@ -80,7 +80,7 @@ export function ServicesGrid() {
           className="mt-10 text-center"
         >
           <Link
-            href="/servicios"
+            href="/tienda"
             className="font-space font-semibold text-sm text-texto-light hover:text-blanco border-b border-zinc/40 hover:border-blanco pb-0.5 transition-all duration-200 uppercase tracking-wide"
           >
             Ver todos los servicios →

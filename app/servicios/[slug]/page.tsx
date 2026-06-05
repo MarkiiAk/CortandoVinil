@@ -38,7 +38,7 @@ export default function ServiceDetailPage({ params }: Props) {
 
           {/* Back */}
           <Link
-            href="/servicios"
+            href="/tienda"
             className="inline-flex items-center gap-2 font-space text-xs tracking-widest uppercase text-texto-muted hover:text-blanco transition-colors mb-12 group"
           >
             <ArrowLeft size={13} className="group-hover:-translate-x-0.5 transition-transform" />

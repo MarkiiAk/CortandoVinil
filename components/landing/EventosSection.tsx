@@ -18,7 +18,7 @@ const categorias = [
     featured: true,
     waMessage:
       "Hola 👋 me interesa producir merch o material corporativo para mi empresa. ¿Me pueden dar información?",
-    href: "/shop?cat=sublimado",
+    href: "/tienda",
   },
   {
     id: "emprendedores",
@@ -29,7 +29,7 @@ const categorias = [
     featured: false,
     waMessage:
       "Hola 👋 soy emprendedor y quiero producir mis primeros artículos personalizados. ¿Cómo funciona?",
-    href: "/shop",
+    href: "/tienda",
   },
   {
     id: "eventos",
@@ -40,7 +40,7 @@ const categorias = [
     featured: false,
     waMessage:
       "Hola 👋 necesito material para un evento próximo: lonas, señalética o vinil. ¿Me pueden cotizar?",
-    href: "/shop?cat=granformato",
+    href: "/tienda",
   },
 ];
 
