@@ -5,15 +5,6 @@ import Link from "next/link";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const WA_NUMBER = "5255715961638";
-const WA_MSG = "Hola, quiero cotizar un proyecto con Cortando Vinil.";
-
-const workPlaceholders = [
-  { label: "DTF",          aspect: "aspect-[3/4]" },
-  { label: "Gran Formato", aspect: "aspect-square" },
-  { label: "Láser CNC",    aspect: "aspect-video"  },
-];
-
 const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.12 } },
@@ -65,7 +56,15 @@ export function Hero() {
             variants={item}
             className="font-inter text-base text-texto-muted leading-relaxed max-w-md"
           >
-            Artículos promocionales, publicidad y personalización con tecnología industrial. Sin intermediarios, sin sorpresas.
+            Vinil, sublimación, bordado, corte láser, gran formato y más. Producción propia en CDMX — sin intermediarios, sin sorpresas.
+          </motion.p>
+
+          {/* "No encuentras lo que buscas" hint */}
+          <motion.p
+            variants={item}
+            className="font-inter text-sm text-texto-muted/60 leading-relaxed max-w-md border-l-2 border-acento/40 pl-3"
+          >
+            ¿Tienes algo en mente que no ves en el catálogo? Mándanos un mensaje — casi siempre podemos hacerlo.
           </motion.p>
 
           <motion.div variants={item} className="flex items-center gap-4 flex-wrap">
@@ -91,13 +90,11 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease }}
           className="hidden lg:grid grid-cols-2 gap-3"
         >
-          {/* Top-left tall */}
           <div className="relative aspect-[3/4] bg-carbon flex items-end p-4">
             <span className="font-space text-xs tracking-widest uppercase text-texto-muted border border-zinc/50 px-2 py-1">
               DTF
             </span>
           </div>
-          {/* Right column */}
           <div className="flex flex-col gap-3">
             <div className="relative aspect-square bg-carbon-light flex items-end p-4">
               <span className="font-space text-xs tracking-widest uppercase text-texto-muted border border-zinc/50 px-2 py-1">

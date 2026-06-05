@@ -8,22 +8,22 @@ const steps = [
   {
     number: "01",
     title: "Nos contactas",
-    desc: "Por WhatsApp, teléfono o formulario. Sin papeleo ni requisitos previos.",
+    desc: "Por WhatsApp, teléfono o el formulario de abajo. Cuéntanos qué necesitas — no importa qué tan concreta o vaga esté la idea.",
   },
   {
     number: "02",
-    title: "Cotizamos",
-    desc: "Precio justo, tiempo real de entrega, sin letra chica. Respuesta el mismo día.",
+    title: "Te cotizamos",
+    desc: "Precio justo y tiempo real de entrega. Sin letra chica ni costos escondidos. Respondemos el mismo día en horario hábil.",
   },
   {
     number: "03",
     title: "Producimos",
-    desc: "Maquinaria propia, control de calidad en cada pieza. Te enviamos prueba antes si aplica.",
+    desc: "Maquinaria propia, supervisión en cada etapa. Si aplica, te mandamos prueba digital antes de cortar o imprimir.",
   },
   {
     number: "04",
-    title: "Entregamos",
-    desc: "Recoges en taller o enviamos a cualquier punto de la república con número de rastreo.",
+    title: "Lo recibes",
+    desc: "Recoges en nuestro taller en Algrarín, CDMX, o lo enviamos con número de rastreo a cualquier estado de la república.",
   },
 ];
 
@@ -32,15 +32,20 @@ export function HowWeWork() {
     <section id="proceso" className="bg-negro py-20 px-6 md:px-10 border-t border-zinc/20">
       <div className="max-w-7xl mx-auto">
 
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease }}
-          className="font-space font-bold text-4xl md:text-5xl text-blanco mb-16"
+          className="mb-16"
         >
-          El proceso
-        </motion.h2>
+          <h2 className="font-space font-bold text-4xl md:text-5xl text-blanco">
+            ¿Cómo funciona?
+          </h2>
+          <p className="font-inter text-sm text-texto-muted mt-3 max-w-lg">
+            Cuatro pasos y tienes tu proyecto en manos. Sin trámites, sin esperas innecesarias.
+          </p>
+        </motion.div>
 
         {/* Desktop horizontal */}
         <div className="hidden md:grid md:grid-cols-4 gap-0 relative">

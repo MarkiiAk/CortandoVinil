@@ -8,27 +8,27 @@ import { Wrench, Palette, Clock } from "lucide-react";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const stats = [
-  { value: 15, suffix: "+", label: "años de experiencia" },
+  { value: 15, suffix: "+", label: "años en el mercado" },
   { value: 9,  suffix: "",  label: "líneas de producción" },
-  { value: 32, suffix: "",  label: "estados con envío"    },
-  { value: 1,  suffix: "",  label: "pieza mínimo"         },
+  { value: 32, suffix: "",  label: "estados con envío" },
+  { value: 1,  suffix: "",  label: "pieza mínimo" },
 ];
 
 const differentiators = [
   {
     icon: Wrench,
-    title: "Producción propia",
-    desc: "Sin intermediarios, sin sorpresas. Todo el proceso — desde el arte hasta la entrega — en nuestro taller en CDMX.",
+    title: "Producción 100% propia",
+    desc: "Taller propio en CDMX. Sin intermediarios ni terceros — controlamos cada paso del proceso y te damos fechas reales.",
   },
   {
     icon: Palette,
-    title: "Asesoría en diseño incluida",
-    desc: "Si no tienes el arte listo, lo trabajamos contigo. Enviamos prueba digital antes de producir.",
+    title: "Si no tienes arte, no hay bronca",
+    desc: "Te asesoramos en el diseño sin costo extra. Mandamos prueba digital antes de producir para que apruebes antes de que cortemos.",
   },
   {
     icon: Clock,
-    title: "Tiempos reales",
-    desc: "Cotización rápida. Producción puntual. Te damos la fecha de entrega desde el primer mensaje.",
+    title: "Respuesta el mismo día",
+    desc: "Cotizamos rápido y producimos puntual. Desde el primer mensaje ya tienes precio y fecha estimada de entrega.",
   },
 ];
 
@@ -99,6 +99,26 @@ export function WhyUs() {
             </motion.div>
           ))}
         </div>
+
+        {/* "Si no lo ves, pregunta" */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="border border-zinc/30 p-6 flex flex-col md:flex-row md:items-center justify-between gap-4"
+        >
+          <p className="font-inter text-sm text-texto-muted leading-relaxed max-w-xl">
+            <span className="text-blanco font-medium">¿Tienes una idea que no está en el catálogo?</span>{" "}
+            Tenemos más capacidades de las que se ven aquí — sublimación en formatos especiales, cortes complejos, piezas únicas, proyectos grandes. Si lo puedes imaginar, mándanos un mensaje y vemos cómo hacerlo.
+          </p>
+          <a
+            href="/#contacto"
+            className="font-space font-semibold text-xs tracking-widest uppercase text-acento border border-acento/40 px-5 py-3 hover:bg-acento hover:text-negro transition-all duration-150 whitespace-nowrap shrink-0"
+          >
+            Pregúntanos →
+          </a>
+        </motion.div>
 
       </div>
     </section>

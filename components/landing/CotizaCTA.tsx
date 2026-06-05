@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -22,10 +21,11 @@ export function CotizaCTA() {
             className="space-y-3 max-w-xl"
           >
             <h2 className="font-space font-bold text-4xl md:text-5xl text-negro leading-tight">
-              ¿Listo para producir?
+              ¿Listo para arrancar?
             </h2>
             <p className="font-inter text-base text-negro/70">
-              Mándanos tu arte o cuéntanos tu idea. Cotización sin costo, respuesta el mismo día.
+              Mándanos tu arte o cuéntanos la idea. Cotizamos sin costo y respondemos el mismo día.
+              Si no tienes diseño, también te ayudamos con eso.
             </p>
           </motion.div>
 
@@ -48,7 +48,7 @@ export function CotizaCTA() {
               href="mailto:publicidad@cortandovinil.com"
               className="font-space font-semibold text-sm border-2 border-negro/30 text-negro px-8 py-4 hover:border-negro hover:bg-acento-hover transition-all duration-150 uppercase tracking-wide whitespace-nowrap"
             >
-              O escríbenos al correo
+              Escribirnos al correo
             </a>
           </motion.div>
 
