@@ -1,119 +1,65 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/landing/Navbar";
-import { Hero } from "@/components/landing/Hero";
-import { Ticker } from "@/components/landing/Ticker";
-import { StatsBar } from "@/components/landing/StatsBar";
-import { ServiciosSection } from "@/components/landing/ServiciosSection";
-import { ParaQuienSection } from "@/components/landing/ParaQuienSection";
-import { HowItWorks } from "@/components/landing/HowItWorks";
-import { CustomOrder } from "@/components/landing/CustomOrder";
-import { ShopCTA } from "@/components/landing/ShopCTA";
-import { Footer } from "@/components/landing/Footer";
+import { Navbar }          from "@/components/shared/Navbar";
+import { Footer }          from "@/components/shared/Footer";
+import { Hero }            from "@/components/landing/Hero";
+import { ServicesGrid }    from "@/components/landing/ServicesGrid";
+import { WhyUs }           from "@/components/landing/WhyUs";
+import { PortfolioSection } from "@/components/landing/PortfolioSection";
+import { HowWeWork }       from "@/components/landing/HowWeWork";
+import { CotizaCTA }       from "@/components/landing/CotizaCTA";
+import { ContactSection }  from "@/components/landing/ContactSection";
 
 export const metadata: Metadata = {
-  title: "Impresión y Corte Profesional en México",
+  title: "Producción Gráfica e Industrial en CDMX",
   description:
-    "Sublimado, corte láser, gran formato, impresos y vinil textil. Más de 15 años produciendo para negocios, emprendedores y eventos. Enviamos a toda la república mexicana.",
-  keywords: [
-    "impresión personalizada México",
-    "sublimado tazas termos",
-    "corte láser acrílico madera",
-    "lonas publicitarias",
-    "vinil textil playeras",
-    "merch corporativo",
-    "impresión gran formato",
-    "roll up display",
-    "tarjetas de presentación",
-  ],
+    "Sublimado, vinil textil, corte láser, gran formato, bordado, DTF, impresos y letras volumétricas. +15 años produciendo para empresas y emprendedores. CDMX, envíos nacionales.",
   openGraph: {
-    title: "Impresión y Corte Profesional | Cortando Vinil",
+    title: "Cortando Vinil — Producción Gráfica e Industrial",
     description:
-      "Sublimado, corte láser, gran formato, impresos y vinil textil. Más de 15 años produciendo para negocios y eventos en México.",
+      "Artículos promocionales y publicidad con tecnología industrial. CDMX, +15 años, 9 líneas de producción.",
     type: "website",
     locale: "es_MX",
     url: "https://cortandovinil.com",
     siteName: "Cortando Vinil",
-    images: [{ url: "/logo.png", alt: "Cortando Vinil — Impresión y Corte Profesional" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Impresión y Corte Profesional | Cortando Vinil",
-    description: "Sublimado, corte láser, gran formato, impresos y vinil textil. Enviamos a todo México.",
-    images: ["/logo.png"],
+    images: [{ url: "/logo.png", alt: "Cortando Vinil" }],
   },
   alternates: { canonical: "https://cortandovinil.com" },
 };
 
-const websiteSchema = {
+const orgSchema = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
+  "@type": "LocalBusiness",
   name: "Cortando Vinil",
   url: "https://cortandovinil.com",
-};
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Cortando Vinil",
-  url: "https://cortandovinil.com",
+  telephone: "+525571596138",
+  email: "publicidad@cortandovinil.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Marcelino Dávalos 45 Local D",
+    addressLocality: "Algrarín",
+    addressRegion: "CDMX",
+    addressCountry: "MX",
+  },
+  openingHours: "Mo-Fr 11:00-19:00",
   description:
-    "Empresa de impresión y corte profesional con más de 15 años de experiencia. Sublimado, corte láser, gran formato, impresos y vinil textil. Enviamos a toda la república mexicana.",
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "¿Cuánto tarda la cotización?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Respondemos cotizaciones en menos de 24 horas hábiles. Para pedidos urgentes, contáctanos directamente por WhatsApp.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Hacen pedidos desde 1 pieza?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sí, la mayoría de nuestros servicios están disponibles desde 1 pieza. Algunos productos tienen mínimos por proceso técnico — te lo indicamos al cotizar.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Envían a toda la república mexicana?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sí, enviamos a los 32 estados de la república mexicana por paquetería. El costo de envío se incluye en la cotización.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Necesito mandar el diseño listo?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Si tienes el archivo listo (AI, PDF, PNG en alta resolución) es ideal. Si no, nuestro equipo puede apoyarte con el diseño — pregunta por ese servicio al cotizar.",
-      },
-    },
-  ],
+    "Empresa de producción gráfica e industrial con más de 15 años de experiencia. Sublimado, vinil textil, corte láser, gran formato, bordado, DTF, impresos y letras volumétricas.",
 };
 
 export default function HomePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
       <Navbar />
       <Hero />
-      <Ticker />
-      <StatsBar />
-      <ServiciosSection />
-      <ParaQuienSection />
-      <HowItWorks />
-      <CustomOrder />
-      <ShopCTA />
+      <ServicesGrid />
+      <WhyUs />
+      <PortfolioSection />
+      <HowWeWork />
+      <CotizaCTA />
+      <ContactSection />
       <Footer />
     </>
   );

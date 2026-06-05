@@ -3,13 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --background: #F7F7F5;
-  --foreground: #0C0E1E;
+  --background: #0A0A0A;
+  --foreground: #F5F5F5;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
+}
+
+@layer utilities {
+  .hero-pattern {
+    background-image: radial-gradient(circle, #2A2A2A 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
 }
 
 @keyframes ticker {
