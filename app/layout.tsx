@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Figtree } from "next/font/google";
 import "./globals.css";
+import { FloatingButtons } from "@/components/landing/FloatingButtons";
 
 const archivoBlack = Archivo_Black({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${archivoBlack.variable} ${figtree.variable} font-figtree antialiased`}>
         {children}
+        <FloatingButtons />
       </body>
     </html>
   );

@@ -1,22 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const WHATSAPP_NUMBER = "5212296499981";
 const WA_MSG = "Hola 👋 quiero cotizar un proyecto con Cortando Vinil.";
-
-const materiales = [
-  "real.",
-  "en vinilo.",
-  "en acrílico.",
-  "en tela.",
-  "en cerámica.",
-  "en madera.",
-];
 
 const servicios = [
   { num: "01", name: "Sublimado" },
@@ -53,7 +44,6 @@ function useCountUp(target: number, duration: number, start: boolean) {
 }
 
 export function Hero() {
-  const [index, setIndex] = useState(0);
   const [activeService, setActiveService] = useState(0);
   const [countStarted, setCountStarted] = useState(false);
   const years = useCountUp(15, 1.5, countStarted);
@@ -61,13 +51,6 @@ export function Hero() {
   useEffect(() => {
     const t = setTimeout(() => setCountStarted(true), 800);
     return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((i) => (i + 1) % materiales.length);
-    }, 1800);
-    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -84,7 +67,7 @@ export function Hero() {
     >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-16 lg:gap-20 items-center">
 
-        {/* Left — brand statement */}
+        {/* Left */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -93,12 +76,7 @@ export function Hero() {
         >
           <motion.div variants={item}>
             <span className="font-figtree text-xs tracking-[0.25em] uppercase text-lienzo/40">
-              <motion.span
-                key={countStarted ? "counting" : "zero"}
-                className="tabular-nums"
-              >
-                {years}
-              </motion.span>
+              <span className="tabular-nums">{years}</span>
               {" "}años de experiencia · Enviamos a todo México
             </span>
           </motion.div>
@@ -111,21 +89,9 @@ export function Hero() {
             <br />
             diseñas,
             <br />
-            <span className="text-lienzo/80">lo hacemos </span>
-            <span className="relative inline-block min-w-[2ch]">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={materiales[index]}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -16 }}
-                  transition={{ duration: 0.4, ease }}
-                  className="inline-block text-fuego"
-                >
-                  {materiales[index]}
-                </motion.span>
-              </AnimatePresence>
-            </span>
+            <span className="text-fuego">lo hacemos</span>
+            <br />
+            real.
           </motion.h1>
 
           <motion.p
@@ -157,7 +123,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right — service list with active highlight cycling */}
+        {/* Right — service list with animated highlight */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
