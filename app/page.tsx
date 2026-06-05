@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { Ticker } from "@/components/landing/Ticker";
-import { ValueProps } from "@/components/landing/ValueProps";
-import { FeaturedProducts } from "@/components/landing/FeaturedProducts";
-import { EventosSection } from "@/components/landing/EventosSection";
+import { StatsBar } from "@/components/landing/StatsBar";
+import { ServiciosSection } from "@/components/landing/ServiciosSection";
+import { ParaQuienSection } from "@/components/landing/ParaQuienSection";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { CustomOrder } from "@/components/landing/CustomOrder";
 import { ShopCTA } from "@/components/landing/ShopCTA";
@@ -33,12 +33,7 @@ export const metadata: Metadata = {
     locale: "es_MX",
     url: "https://cortandovinil.com",
     siteName: "Cortando Vinil",
-    images: [
-      {
-        url: "/logo.png",
-        alt: "Cortando Vinil — Impresión y Corte Profesional",
-      },
-    ],
+    images: [{ url: "/logo.png", alt: "Cortando Vinil — Impresión y Corte Profesional" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -46,9 +41,7 @@ export const metadata: Metadata = {
     description: "Sublimado, corte láser, gran formato, impresos y vinil textil. Enviamos a todo México.",
     images: ["/logo.png"],
   },
-  alternates: {
-    canonical: "https://cortandovinil.com",
-  },
+  alternates: { canonical: "https://cortandovinil.com" },
 };
 
 const websiteSchema = {
@@ -92,7 +85,7 @@ const faqSchema = {
       name: "¿Envían a toda la república mexicana?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí, enviamos a toda la república mexicana por paquetería. El costo de envío se incluye en la cotización.",
+        text: "Sí, enviamos a los 32 estados de la república mexicana por paquetería. El costo de envío se incluye en la cotización.",
       },
     },
     {
@@ -100,7 +93,7 @@ const faqSchema = {
       name: "¿Necesito mandar el diseño listo?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si tienes el archivo listo (AI, PDF, PNG en alta resolución) es ideal. Si no, nuestro equipo puede apoyarte con el diseño — cotiza también ese servicio.",
+        text: "Si tienes el archivo listo (AI, PDF, PNG en alta resolución) es ideal. Si no, nuestro equipo puede apoyarte con el diseño — pregunta por ese servicio al cotizar.",
       },
     },
   ],
@@ -109,24 +102,15 @@ const faqSchema = {
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       <Hero />
       <Ticker />
-      <ValueProps />
-      <FeaturedProducts />
-      <EventosSection />
+      <StatsBar />
+      <ServiciosSection />
+      <ParaQuienSection />
       <HowItWorks />
       <CustomOrder />
       <ShopCTA />
