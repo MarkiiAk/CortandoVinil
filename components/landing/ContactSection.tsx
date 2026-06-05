@@ -190,7 +190,7 @@ export function ContactSection() {
           <div className="w-full h-72 md:h-96 border border-zinc/30 overflow-hidden">
             <iframe
               title="Cortando Vinil — Ubicación"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8!2d-99.1469!3d19.4260!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6a5b3f1a3b%3A0x0!2sMarcelino%20D%C3%A1valos%2045%2C%20Algar%C3%ADn%2C%20CDMX!5e0!3m2!1ses!2smx!4v1700000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.157089304052!2d-99.13991118920748!3d19.40561748179242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fee6ec2128af%3A0xff7a9d7b4797bfe2!2sCortando%20Vinil!5e0!3m2!1ses-419!2smx!4v1780700262083!5m2!1ses-419!2smx"
               width="100%"
               height="100%"
               style={{ border: 0, filter: "grayscale(1) invert(0.9) contrast(0.85)" }}
