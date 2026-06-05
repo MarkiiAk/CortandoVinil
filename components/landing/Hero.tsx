@@ -92,7 +92,7 @@ export function Hero() {
         >
           <div className="relative aspect-[3/4] bg-carbon overflow-hidden">
             <video
-              src="/hero-dtf.mp4"
+              src="/servicios/hero-dtf.mp4"
               autoPlay
               muted
               loop
