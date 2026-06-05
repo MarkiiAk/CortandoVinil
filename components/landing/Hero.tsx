@@ -90,10 +90,20 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease }}
           className="hidden lg:grid grid-cols-2 gap-3"
         >
-          <div className="relative aspect-[3/4] bg-carbon flex items-end p-4">
-            <span className="font-space text-xs tracking-widest uppercase text-texto-muted border border-zinc/50 px-2 py-1">
-              DTF
-            </span>
+          <div className="relative aspect-[3/4] bg-carbon overflow-hidden">
+            <video
+              src="/hero-dtf.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/70 to-transparent p-4">
+              <span className="font-space text-xs tracking-widest uppercase text-blanco/80 border border-blanco/30 px-2 py-1">
+                DTF
+              </span>
+            </div>
           </div>
           <div className="flex flex-col gap-3">
             <div className="relative aspect-square bg-carbon-light flex items-end p-4">
