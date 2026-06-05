@@ -38,8 +38,8 @@ export function ProductCard({ product }: ProductCardProps) {
         <p className="font-dm text-sm text-humo line-clamp-1">
           {product.shortDescription}
         </p>
-        <p className="font-dm text-sm text-cafe-claro">
-          desde ${product.basePrice} MXN
+        <p className="font-dm text-sm text-humo tracking-wide">
+          Cotiza sin compromiso
         </p>
       </div>
     </Link>

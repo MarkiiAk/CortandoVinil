@@ -5,7 +5,7 @@ import { MessageCircle } from "lucide-react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const WHATSAPP_NUMBER = "521XXXXXXXXXX";
+const WHATSAPP_NUMBER = "5212296499981";
 
 const servicios = [
   {
@@ -14,7 +14,7 @@ const servicios = [
     description:
       "Link animado que se abre en el celular con el diseño de tu evento. Sin imagen borrosa de WhatsApp, sin imprimir nada.",
     note: "Tenemos muestra — pídela por WhatsApp.",
-    price: "desde $450",
+    price: "Precio por cotización",
     featured: true,
     waMessage:
       "Hola 👋 me interesa una invitación digital para mi evento. ¿Me pueden compartir una muestra?",
@@ -25,7 +25,7 @@ const servicios = [
     description:
       "El panel que se roba todas las fotos. Texto de tu evento en vinilo de corte, en el estilo y colores que ya elegiste.",
     note: "La mampara se cotiza aparte — trae la tuya o consultamos.",
-    price: "vinilo desde $350",
+    price: "Precio por cotización",
     featured: false,
     waMessage:
       "Hola 👋 me interesa un backdrop o mampara personalizada para mi evento. ¿Me dan más info?",
@@ -36,7 +36,7 @@ const servicios = [
     description:
       "Papel premium con el mismo diseño de todo lo demás. Para quienes todavía merecen algo en las manos.",
     note: "Mínimo 20 piezas. Se coordina con la digital.",
-    price: "desde $25 c/u",
+    price: "Precio por cotización",
     featured: false,
     waMessage:
       "Hola 👋 me interesan invitaciones físicas para mi evento. ¿Cuál es el proceso?",
