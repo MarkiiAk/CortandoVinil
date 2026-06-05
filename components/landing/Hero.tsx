@@ -1,12 +1,22 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const WHATSAPP_NUMBER = "5212296499981";
 const WA_MSG = "Hola 👋 quiero cotizar un proyecto con Cortando Vinil.";
+
+const materiales = [
+  "real.",
+  "en vinilo.",
+  "en acrílico.",
+  "en tela.",
+  "en cerámica.",
+  "en madera.",
+];
 
 const servicios = [
   { num: "01", name: "Sublimado" },
@@ -26,7 +36,47 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
 };
 
+function useCountUp(target: number, duration: number, start: boolean) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!start) return;
+    let startTime: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
+      setCount(Math.floor(progress * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [start, target, duration]);
+  return count;
+}
+
 export function Hero() {
+  const [index, setIndex] = useState(0);
+  const [activeService, setActiveService] = useState(0);
+  const [countStarted, setCountStarted] = useState(false);
+  const years = useCountUp(15, 1.5, countStarted);
+
+  useEffect(() => {
+    const t = setTimeout(() => setCountStarted(true), 800);
+    return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((i) => (i + 1) % materiales.length);
+    }, 1800);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveService((i) => (i + 1) % servicios.length);
+    }, 1800);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="inicio"
@@ -43,7 +93,13 @@ export function Hero() {
         >
           <motion.div variants={item}>
             <span className="font-figtree text-xs tracking-[0.25em] uppercase text-lienzo/40">
-              Más de 15 años de experiencia · Enviamos a todo México
+              <motion.span
+                key={countStarted ? "counting" : "zero"}
+                className="tabular-nums"
+              >
+                {years}
+              </motion.span>
+              {" "}años de experiencia · Enviamos a todo México
             </span>
           </motion.div>
 
@@ -55,9 +111,21 @@ export function Hero() {
             <br />
             diseñas,
             <br />
-            <span className="text-fuego">lo hacemos</span>
-            <br />
-            real.
+            <span className="text-lienzo/80">lo hacemos </span>
+            <span className="relative inline-block min-w-[2ch]">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={materiales[index]}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -16 }}
+                  transition={{ duration: 0.4, ease }}
+                  className="inline-block text-fuego"
+                >
+                  {materiales[index]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
           </motion.h1>
 
           <motion.p
@@ -89,7 +157,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right — service category list */}
+        {/* Right — service list with active highlight cycling */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -103,14 +171,27 @@ export function Hero() {
                 initial={{ opacity: 0, x: 16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 + i * 0.08, ease }}
-                className="group flex items-center justify-between py-6 border-b border-lienzo/15 cursor-default"
+                className="flex items-center justify-between py-5 border-b border-lienzo/15 cursor-default"
               >
-                <span className="font-archivo text-[clamp(1.5rem,2.8vw,2.2rem)] text-lienzo/90 group-hover:text-lienzo transition-colors duration-200">
+                <motion.span
+                  animate={{
+                    color: activeService === i ? "#ffffff" : "rgba(255,255,255,0.35)",
+                    x: activeService === i ? 6 : 0,
+                  }}
+                  transition={{ duration: 0.4, ease }}
+                  className="font-archivo text-[clamp(1.4rem,2.5vw,2rem)]"
+                >
                   {s.name}
-                </span>
-                <span className="font-figtree text-sm text-lienzo/30 group-hover:text-fuego transition-colors duration-200 tabular-nums">
+                </motion.span>
+                <motion.span
+                  animate={{
+                    color: activeService === i ? "#CC1B1B" : "rgba(255,255,255,0.2)",
+                  }}
+                  transition={{ duration: 0.4 }}
+                  className="font-figtree text-sm tabular-nums"
+                >
                   {s.num}
-                </span>
+                </motion.span>
               </motion.div>
             ))}
           </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
+import { Ticker } from "@/components/landing/Ticker";
 import { ValueProps } from "@/components/landing/ValueProps";
 import { FeaturedProducts } from "@/components/landing/FeaturedProducts";
 import { EventosSection } from "@/components/landing/EventosSection";
@@ -122,6 +123,7 @@ export default function HomePage() {
       />
       <Navbar />
       <Hero />
+      <Ticker />
       <ValueProps />
       <FeaturedProducts />
       <EventosSection />
