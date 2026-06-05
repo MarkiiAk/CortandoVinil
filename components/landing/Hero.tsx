@@ -97,9 +97,13 @@ export function Hero() {
               muted
               loop
               playsInline
-              className="absolute inset-0 w-full h-full object-cover"
+              preload="auto"
+              className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+              onCanPlay={(e) => { (e.target as HTMLVideoElement).style.opacity = "1"; }}
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/70 to-transparent p-4">
+            {/* Fallback placeholder visible hasta que cargue */}
+            <div className="absolute inset-0 bg-zinc/30" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/70 to-transparent p-4 z-10">
               <span className="font-space text-xs tracking-widest uppercase text-blanco/80 border border-blanco/30 px-2 py-1">
                 DTF
               </span>
