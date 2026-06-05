@@ -45,9 +45,6 @@ export function ServicesGrid() {
             <h2 className="font-space font-bold text-4xl md:text-5xl text-blanco">
               Lo que hacemos
             </h2>
-            <span className="font-space font-bold text-4xl md:text-5xl text-acento">
-              {String(services.length).padStart(2, "0")}
-            </span>
           </div>
           <Link
             href="/tienda"

@@ -76,7 +76,7 @@ export function Hero() {
               Ver servicios
             </Link>
             <Link
-              href="/cotizar"
+              href="/#contacto"
               className="font-space font-semibold text-sm border border-blanco/30 text-blanco px-7 py-3.5 hover:border-blanco/60 hover:bg-blanco/5 transition-all duration-150 uppercase tracking-wide"
             >
               Cotizar

@@ -91,7 +91,7 @@ export function PortfolioSection() {
           className="mt-10 font-inter text-sm text-texto-muted text-center"
         >
           ¿Tienes un proyecto en mente?{" "}
-          <Link href="/cotizar" className="text-acento hover:text-blanco transition-colors underline underline-offset-2">
+          <Link href="/#contacto" className="text-acento hover:text-blanco transition-colors underline underline-offset-2">
             Cotiza sin compromiso →
           </Link>
         </motion.p>

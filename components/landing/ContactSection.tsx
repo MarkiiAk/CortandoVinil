@@ -175,6 +175,40 @@ export function ContactSection() {
           </motion.div>
 
         </div>
+
+        {/* Google Maps */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-14"
+        >
+          <p className="font-space text-xs tracking-widest uppercase text-texto-muted mb-4">
+            Ubicación
+          </p>
+          <div className="w-full h-72 md:h-96 border border-zinc/30 overflow-hidden">
+            <iframe
+              title="Cortando Vinil — Ubicación"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8!2d-99.1469!3d19.4260!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6a5b3f1a3b%3A0x0!2sMarcelino%20D%C3%A1valos%2045%2C%20Algar%C3%ADn%2C%20CDMX!5e0!3m2!1ses!2smx!4v1700000000000"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: "grayscale(1) invert(0.9) contrast(0.85)" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <a
+            href="https://maps.google.com/?q=Marcelino+Dávalos+45+Local+D+Algrarín+CDMX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-3 font-space text-xs tracking-widest uppercase text-texto-muted hover:text-blanco transition-colors"
+          >
+            Abrir en Google Maps →
+          </a>
+        </motion.div>
+
       </div>
     </section>
   );

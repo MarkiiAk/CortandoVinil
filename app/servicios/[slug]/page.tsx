@@ -92,7 +92,7 @@ export default function ServiceDetailPage({ params }: Props) {
                   Cotización sin costo. Respuesta el mismo día en horario hábil.
                 </p>
                 <Link
-                  href={`/cotizar?servicio=${service.slug}`}
+                  href="/#contacto"
                   className="inline-block font-space font-bold text-sm bg-negro text-blanco px-8 py-3.5 hover:bg-carbon transition-colors uppercase tracking-wide"
                 >
                   Cotizar {service.name}

@@ -79,7 +79,7 @@ export function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Link
-              href="/cotizar"
+              href="/#contacto"
               className="font-space font-semibold text-sm bg-acento text-negro px-5 py-2.5 hover:bg-acento-hover transition-colors duration-150 uppercase tracking-wide"
             >
               Cotiza ahora
@@ -124,7 +124,7 @@ export function Navbar() {
               </motion.div>
             ))}
             <Link
-              href="/cotizar"
+              href="/#contacto"
               onClick={() => setOpen(false)}
               className="mt-4 font-space font-bold text-sm bg-acento text-negro px-6 py-4 text-center uppercase tracking-wider hover:bg-acento-hover transition-colors"
             >
