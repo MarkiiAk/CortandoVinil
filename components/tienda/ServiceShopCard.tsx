@@ -1,11 +1,7 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { type Service } from "@/lib/services";
-import { ServiceThumbnail } from "@/components/tienda/ServiceThumbnail";
 
 interface Props {
   service: Service;
@@ -14,28 +10,21 @@ interface Props {
 const WA_NUMBER = "5255715961638";
 
 export function ServiceShopCard({ service }: Props) {
-  const [imgError, setImgError] = useState(false);
   const waMsg = `Hola, me interesa cotizar el servicio de *${service.name}*. ¿Me pueden dar información?`;
-  const showRealImage = service.image && !imgError;
 
   return (
     <div className="group bg-carbon border border-zinc/30 hover:border-acento/60 transition-all duration-200 hover:-translate-y-0.5 flex flex-col overflow-hidden">
 
-      {/* Imagen / thumbnail */}
+      {/* Imagen */}
       <Link href={`/tienda/${service.slug}`} className="block">
-        <div className="relative aspect-[16/9] overflow-hidden">
-          {showRealImage ? (
-            <Image
-              src={service.image!}
-              alt={service.name}
-              fill
-              className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              onError={() => setImgError(true)}
-            />
-          ) : (
-            <ServiceThumbnail slug={service.slug} className="w-full h-full" />
-          )}
+        <div className="relative aspect-[16/9] overflow-hidden bg-zinc/20">
+          <Image
+            src={`/servicios/${service.slug}.jpg`}
+            alt={service.name}
+            fill
+            className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
         </div>
       </Link>
 
