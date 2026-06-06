@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     shortcut: "/logo.png",
     apple: "/logo.png",
   },
+  openGraph: {
+    images: [{ url: "/logovinil.jpg", alt: "Cortando Vinil" }],
+  },
 };
 
 export default function RootLayout({

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: "es_MX",
     url: "https://cortandovinil.com",
     siteName: "Cortando Vinil",
-    images: [{ url: "/logo.png", alt: "Cortando Vinil" }],
+    images: [{ url: "/logovinil.jpg", alt: "Cortando Vinil" }],
   },
   alternates: { canonical: "https://cortandovinil.com" },
 };
