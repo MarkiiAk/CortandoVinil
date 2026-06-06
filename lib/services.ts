@@ -17,6 +17,7 @@ export interface Service {
   description: string;
   techTag: string;
   image?: string;                    // /servicios/[slug].jpg cuando esté disponible
+  video?: string;                    // /servicios/[name].mp4 — tiene prioridad sobre image
   specs: { label: string; value: string }[];
   applications: string[];
   customizationFields: CustomizationField[];
@@ -191,6 +192,7 @@ export const services: Service[] = [
     description: "Direct to Film: impresión full color sobre film que se transfiere con calor. Sin límite de colores, sin mínimos. DTF UV para artículos rígidos.",
     techTag: "Impresión DTF · Transfer Duradero",
     image: "/servicios/dtf-dtf-uv.jpg",
+    video: "/servicios/dtf-uv.mp4",
     specs: [
       { label: "Compatibilidad", value: "Algodón, poliéster, cuero, madera, acrílico (DTF UV)" },
       { label: "Colores", value: "Full color ilimitado, incluye blanco" },

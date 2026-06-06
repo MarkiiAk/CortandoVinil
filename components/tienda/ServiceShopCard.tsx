@@ -15,16 +15,27 @@ export function ServiceShopCard({ service }: Props) {
   return (
     <div className="group bg-carbon border border-zinc/30 hover:border-acento/60 transition-all duration-200 hover:-translate-y-0.5 flex flex-col overflow-hidden">
 
-      {/* Imagen */}
+      {/* Media */}
       <Link href={`/tienda/${service.slug}`} className="block">
         <div className="relative aspect-[16/9] overflow-hidden bg-zinc/20">
-          <Image
-            src={`/servicios/${service.slug}.jpg`}
-            alt={service.name}
-            fill
-            className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
+          {service.video ? (
+            <video
+              src={service.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          ) : (
+            <Image
+              src={`/servicios/${service.slug}.jpg`}
+              alt={service.name}
+              fill
+              className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          )}
         </div>
       </Link>
 

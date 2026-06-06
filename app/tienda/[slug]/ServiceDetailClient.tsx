@@ -96,16 +96,27 @@ export function ServiceDetailClient({ service, related }: Props) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-          {/* Left — imagen */}
+          {/* Left — imagen o video */}
           <div className="md:sticky md:top-28">
             <div className="relative w-full aspect-square overflow-hidden border border-zinc/20 bg-zinc/20">
-              <Image
-                src={`/servicios/${service.slug}.jpg`}
-                alt={service.name}
-                fill
-                className="object-cover"
-                priority
-              />
+              {service.video ? (
+                <video
+                  src={service.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ) : (
+                <Image
+                  src={`/servicios/${service.slug}.jpg`}
+                  alt={service.name}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              )}
               <div className="absolute bottom-0 left-0 right-0 bg-negro/80 backdrop-blur-sm px-4 py-2.5 text-center">
                 <span className="font-space text-[10px] tracking-widest uppercase text-texto-muted">
                   Imagen de referencia · cuéntanos tu proyecto
