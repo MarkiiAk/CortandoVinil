@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
 import { getServiceBySlug, getRelatedServices, services } from "@/lib/services";
-import { ServiceThumbnail } from "@/components/tienda/ServiceThumbnail";
+import Image from "next/image";
 
 interface Props {
   params: { slug: string };
@@ -63,8 +63,16 @@ export default function ServiceDetailPage({ params }: Props) {
             {/* Main content */}
             <div className="lg:col-span-2 space-y-12">
 
-              {/* Service thumbnail */}
-              <ServiceThumbnail slug={service.slug} className="aspect-video border border-zinc/30" />
+              {/* Service image */}
+              <div className="relative aspect-video overflow-hidden border border-zinc/30 bg-zinc/20">
+                <Image
+                  src={`/servicios/${service.slug}.jpg`}
+                  alt={service.name}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
 
               {/* Applications */}
               <div>

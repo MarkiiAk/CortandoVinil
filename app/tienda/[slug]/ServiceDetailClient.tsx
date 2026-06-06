@@ -6,7 +6,6 @@ import Link from "next/link";
 import { ArrowLeft, MessageCircle, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { type Service } from "@/lib/services";
-import { ServiceThumbnail } from "@/components/tienda/ServiceThumbnail";
 import { cn } from "@/lib/utils";
 
 const WA_NUMBER = "5255715961638";
@@ -82,8 +81,6 @@ export function ServiceDetailClient({ service, related }: Props) {
     setTimeout(() => setSent(false), 4000);
   }
 
-  const hasImage = Boolean(service.image);
-
   return (
     <main className="min-h-screen bg-negro">
       <div className="max-w-6xl mx-auto px-6 md:px-10 pt-20 pb-24">
@@ -99,27 +96,21 @@ export function ServiceDetailClient({ service, related }: Props) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-          {/* Left — imagen / thumbnail */}
+          {/* Left — imagen */}
           <div className="md:sticky md:top-28">
-            <div className="relative w-full aspect-square overflow-hidden border border-zinc/20">
-              {hasImage ? (
-                <>
-                  <Image
-                    src={service.image!}
-                    alt={service.name}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-negro/80 backdrop-blur-sm px-4 py-2.5 text-center">
-                    <span className="font-space text-[10px] tracking-widest uppercase text-texto-muted">
-                      Imagen de referencia · cuéntanos tu proyecto
-                    </span>
-                  </div>
-                </>
-              ) : (
-                <ServiceThumbnail slug={service.slug} className="w-full h-full" />
-              )}
+            <div className="relative w-full aspect-square overflow-hidden border border-zinc/20 bg-zinc/20">
+              <Image
+                src={`/servicios/${service.slug}.jpg`}
+                alt={service.name}
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-negro/80 backdrop-blur-sm px-4 py-2.5 text-center">
+                <span className="font-space text-[10px] tracking-widest uppercase text-texto-muted">
+                  Imagen de referencia · cuéntanos tu proyecto
+                </span>
+              </div>
             </div>
           </div>
 
